@@ -44,36 +44,48 @@ const grupoText = [
 
 const empresas = ["Agência Barkóczy", "Teatro Real", "Editorial", "Instituto de Artes", "El Grifo Café"];
 
-type Negocio = { name: string; tag: string; facts: string[]; text: string; pink?: boolean | undefined };
+type NegocioTone = "primary" | "teatro" | "editorial" | "instituto" | "cafe";
+const negocioCls: Record<NegocioTone, string> = {
+  primary: "bg-primary text-primary-foreground",
+  teatro: "bg-teatro text-teatro-foreground",
+  editorial: "bg-editorial text-editorial-foreground",
+  instituto: "bg-instituto text-instituto-foreground",
+  cafe: "bg-cafe text-cafe-foreground",
+};
+type Negocio = { name: string; tag: string; facts: string[]; text: string; tone: NegocioTone };
 const negocios: Negocio[] = [
   {
     name: "Agência Barkóczy",
     tag: "A pedra fundamental",
+    tone: "primary",
     facts: ["Fundada por Dashiell", "Direção de arte: Tainã", "O coração pulsante de Madrid"],
     text: "Começou como um núcleo de excelência em comunicação e rapidamente se tornou o epicentro social de toda a comunidade — o espaço onde laços são formados, projetos nascem e a vida cotidiana acontece em sua forma mais autêntica. Dashiell ergueu as pilastras inabaláveis do negócio com sua visão de liderança; Tainã, ao assumir a direção de arte, injetou sangue novo, modernidade e uma estética visual incomparável, consolidando a marca como o coração pulsante de Madrid e da comunidade virtual.",
   },
   {
     name: "Teatro Real Barkóczy",
     tag: "Símbolo máximo de status",
+    tone: "teatro",
     facts: ["Edifício histórico restaurado", "Óperas, peças e exposições", "Veludo carmesim e ouro"],
     text: "Nascido da paixão de Dashiell pela arquitetura clássica e pela alta cultura espanhola e europeia. Ele adquiriu um edifício histórico no coração de Madrid e o restaurou de forma impecável, transformando-o no palco mais prestigiado da Espanha — onde a elite cultural se encontra sob o olhar vigilante e o patrocínio generoso dos Barkóczy.",
   },
   {
     name: "Editorial Barkóczy",
     tag: "Memória e prestígio",
+    tone: "editorial",
     facts: ["Curadoria: Dashiell", "Concepção gráfica: Tainã", "Capas de colecionador"],
     text: "Para Dashiell, a memória e a história são o bem mais precioso de uma família — o mesmo respeito que o fez resgatar a história do falecido amigo e de Tainã. A editora é reconhecida por publicações de altíssimo padrão literário e acadêmico. Sob as mãos de Tainã, cada livro ganha capas que são verdadeiras peças de arte, cobiçadas em todo o mundo.",
   },
   {
     name: "Instituto Barkóczy de Artes Creativas",
     tag: "Ponte entre gerações",
+    tone: "instituto",
     facts: ["Design gráfico, têxtil e digital", "Inspirado no talento de Tainã", "Bolsas para América do Sul e África"],
     text: "Dashiell fundou a escola inspirado pelo talento precoce de Tainã para o design e as artes visuais. Hoje é a instituição mais moderna e renomada da Espanha na área. Por exigência pessoal de Tainã, em honra às suas raízes e à memória de seus pais — o fotojornalista e a ativista —, o instituto mantém um programa robusto de bolsas integrais para jovens talentos da América do Sul e da África.",
   },
   {
     name: "El Grifo Café & Pastelería",
     tag: "Um projeto 100% Tainã",
-    pink: true,
+    tone: "cafe",
     facts: ["Tainã detesta café puro", "O café é a estrela oculta", "Seção intocável de chocolate"],
     text: "A cafeteria mais badalada da cidade — e o detalhe irônico é que Tainã detesta o sabor do café puro. Fascinado pelo café como ingrediente, ele trabalhou lado a lado com chefs e baristas europeus num cardápio de entremets, tortas, frapês e coquetéis, cada um com seu próprio brilho. Para o seu lado formiga, exigiu uma seção exclusiva de chocolate: chocolates quentes densos, brownies e trufas. Sob o brasão do Grifo, é o ponto de encontro dos alunos do Instituto, das reuniões informais de Dashiell e o abastecimento de doces de Tainã nas madrugadas de design.",
   },
@@ -331,9 +343,9 @@ function Index() {
                 {negocios.map((n, i) => (
                   <article
                     key={n.name}
-                    className={`relative overflow-hidden rounded-3xl p-8 md:p-10 ${
-                      i === 0 ? "bg-primary text-primary-foreground lg:col-span-2" : n.pink ? "bg-pink text-pink-foreground" : "border border-ink-foreground/20"
-                    }`}
+                    className={`relative overflow-hidden rounded-3xl p-8 transition-transform hover:-translate-y-1 md:p-10 ${
+                      negocioCls[n.tone]
+                    } ${n.tone === "primary" ? "lg:col-span-2" : ""}`}
                   >
                     <span className="pointer-events-none absolute -right-2 -top-6 text-[8rem] font-black leading-none opacity-15">0{i + 1}</span>
                     <p className="text-xs font-bold uppercase tracking-[0.3em] opacity-70">{n.tag}</p>

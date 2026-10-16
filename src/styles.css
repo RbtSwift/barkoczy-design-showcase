@@ -33,6 +33,14 @@
   --color-ink-foreground: var(--ink-foreground);
   --color-pink: var(--pink);
   --color-pink-foreground: var(--pink-foreground);
+  --color-teatro: var(--teatro);
+  --color-teatro-foreground: var(--teatro-foreground);
+  --color-editorial: var(--editorial);
+  --color-editorial-foreground: var(--editorial-foreground);
+  --color-instituto: var(--instituto);
+  --color-instituto-foreground: var(--instituto-foreground);
+  --color-cafe: var(--cafe);
+  --color-cafe-foreground: var(--cafe-foreground);
 }
 
 :root {
@@ -62,6 +70,15 @@
   /* Hot pink #e5197f — Tainã's accent, a cool pink that sits beside the royal blue */
   --pink: oklch(0.585 0.225 3.5);
   --pink-foreground: oklch(1 0 0);
+  /* Per-business accents — one original color per empreendimento */
+  --teatro: oklch(0.44 0.15 18); /* carmesim velvet — Teatro Real */
+  --teatro-foreground: oklch(0.98 0 0);
+  --editorial: oklch(0.47 0.09 80); /* deep bronze/gold — Editorial */
+  --editorial-foreground: oklch(0.98 0 0);
+  --instituto: oklch(0.43 0.15 295); /* violet — Instituto de Artes */
+  --instituto-foreground: oklch(0.98 0 0);
+  --cafe: oklch(0.42 0.07 55); /* coffee brown — El Grifo Café */
+  --cafe-foreground: oklch(0.98 0 0);
 }
 
 @layer base {
