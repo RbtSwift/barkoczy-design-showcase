@@ -39,7 +39,8 @@ const tainaText = [
   "Essa intervenção de Dashiell moldou não apenas o futuro de Tainã, mas o seu próprio coração. Ele é profundamente apegado ao padrinho, a quem considera seu porto seguro e a pessoa que mais ama no mundo. Não há um único passo que Tainã dê, um projeto que conclua ou uma frustração que sinta que não seja imediatamente compartilhado com Dashiell. Seja dividindo a mesma sala ou conversando por mensagens enquanto viaja, Tainã faz questão de manter essa proximidade constante. Cada madrugada no Illustrator, cada nova habilidade que aprende e cada passo na Agência tem um objetivo silencioso e primordial em sua vida: ser o motivo do maior orgulho de seu padrinho.",
   "Apesar de já ter mais de 18 anos, perto do padrinho Tainã continua sendo criança. É como se a postura fosse embora: ele fica manhoso, carente, do jeito mais aberto que existe — e Dashiell sabe exatamente o que fazer com isso. Vive o enchendo de carinho, o mimando e realizando suas vontades sem pensar duas vezes, como quem entende que aquele menino ainda quer colo.",
   "O dia em que se assumiu gay ficou marcado para sempre. Mesmo sabendo que o padrinho o amava acima de tudo, Tainã sentiu medo — não de Dashiell, mas da sociedade preconceituosa em que vivia. A resposta veio em forma de acolhimento imediato e de um gesto que mudou o grupo: ao entender o peso que o afilhado carregava, Dashiell decidiu que o Grupo Barkóczy passaria a apoiar as causas LGBTQIA+, para que outras pessoas como Tainã nunca se sentissem sozinhas. Para Tainã, essa é a maior prova de amor que já recebeu.",
-  "Formado em Design Gráfico e Comunicação Digital pelo prestigiado IED (Istituto Europeo di Design) em Madrid, Tainã atua como o diretor de arte não-oficial da Agência Barkóczy. Apaixonado por edição de fotos, ilustração e design têxtil, é ele quem assina a criação de sites e a identidade visual de diversos projetos da comunidade. Ele é uma presença magnética e constante no grupo da agência no Facebook, equilibrando seu papel no império da família com postagens autênticas, onde desabafa sobre sua rotina criativa e interage de forma genuína com os membros.",
+"Formado em Design Gráfico e Comunicação Digital pelo prestigiado IED (Istituto Europeo di Design) em Madrid, Tainã atua como o diretor de arte não-oficial da Agência Barkóczy. Apaixonado por edição de fotos, ilustração e design têxtil, é ele quem assina a criação de sites e a identidade visual de diversos projetos da comunidade. Ele é uma presença magnética e constante no grupo da agência no Facebook, equilibrando seu papel no império da família com postagens autênticas, onde desabafa sobre sua rotina criativa e interage de forma genuína com os membros.",
+  "Foi no IED que as noites em claro no Illustrator — movidas a muito Bubble Tea — viraram profissão. A formação teve um único foco: unir as raízes afro-indígenas às tendências do design moderno europeu, afiando nos corredores da escola o olhar artístico que hoje assina a Direção de Arte e Criação do império da Agência Barkóczy. Tudo, como sempre, com um objetivo em mente: dar ao padrinho o maior orgulho do mundo. E dormitório estudantil? Jamais — morando com Dashiell, a residência oficial de Tainã sempre foi a Mansão Barkóczy.",
   "Tainã ama trabalhar — e ama especialmente usar e abusar da própria criatividade, que lhe brota na cabeça de segundo em segundo. Quando a mente começa a ferver, é o primeiro a aceitar o convite do padrinho para ir à fazenda esfriar a cabeça e passar um tempo na natureza. Quase sempre está ao seu lado nas trilhas e nos acampamentos, trocando as telas pelo mato, pelo céu aberto e pelo barulho dos bichos.",
   "Quando se afasta das telas de trabalho, Tainã é dono de um estilo de vida que mistura o geek ao peculiar. Seu combustível para as horas de edição costuma ser um bom Bubble Tea, acompanhado de sua curiosa preferência por abacate. Sua estética e visão de mundo foram profundamente marcadas por uma inesquecível viagem ao Japão, o que se reflete em seu amor pela cultura pop e pelas animações. Seu refúgio absoluto é o universo de Hora de Aventura — cujas faixas 'Sou Seu Problema' e 'Island Song' são presença constante em seus fones de ouvido —, mas ele também é fã de clássicos modernos como Banana Fish, O Incrível Mundo de Gumball, Apenas um Show e Titio Avô. No tempo livre, além de maratonar os filmes do Homem-Aranha estrelados por Tom Holland, ele divide sua atenção entre a imersão de Dead by Daylight, a exploração no Roblox e investigações no jogo de sua animação favorita. E quando o assunto é cor, a escolha dele é sempre a mesma: o rosa — sua cor favorita, a que ele elege sempre que pode para dar vida às suas criações.",
   "Caseiro por natureza, Tainã é plenamente feliz em casa: um jogo no computador, um bom filme, uma série, os YouTubers favoritos, o caderno de desenho sempre à mão e um livro para ler. Mas também adora sair — ir ao cinema, pedalar pelo parque ecológico, tomar uma água de coco, fazer um piquenique ou simplesmente se deitar na grama para ler. Parques de diversões, shopping center, restaurantes e museus — lugares com histórias para contar — têm lugar garantido na sua lista de programas favoritos.",
@@ -205,8 +206,10 @@ const tainaFacts: Fact[] = [
   { label: "Quem ele mais ama", title: "Dashiell", items: ["Padrinho e porto seguro", "Compartilha tudo com ele", "Sonho: ser seu maior orgulho"], tone: "accent" },
   { label: "Perto do padrinho", title: "Criança de 18 anos", items: ["Perde a postura, fica manhoso e carente", "O padrinho sabe — e vive o mimando", "Suas vontades são feitas sem pensar duas vezes"], tone: "light" },
   { label: "Raízes", title: "Afro-indígena", items: ["Mãe ativista Baré", "Pai fotojornalista angolano", "Nascido em 4 de setembro"], tone: "ink" },
-  { label: "Estudos", title: "IED Madrid", items: ["Design Gráfico", "Comunicação Digital"], tone: "light" },
+  { label: "Estudos", title: "IED Madrid", items: ["Design Gráfico", "Comunicação Digital", "Design Têxtil"], tone: "light" },
   { label: "Trabalho", title: "Diretor de arte", items: ["Agência Barkóczy", "Sites e identidade visual", "Foto, ilustração, design têxtil"], tone: "light" },
+  { label: "Cargo", title: "Sócio-herdeiro", items: ["Grupo Barkóczy · desde 2024", "Diretor de arte e criação", "Madrid, Espanha — trabalho atual"], tone: "accent" },
+  { label: "Dormitório", title: "Residência Barkóczy", items: ["Dormitório estudantil nunca", "Mora com o padrinho na Mansão Barkóczy"], tone: "light" },
   { label: "Criatividade", title: "Uma ideia por segundo", items: ["Ama trabalhar", "Abusa da própria criatividade", "Ideias que brotam de segundo em segundo"], tone: "ink" },
   { label: "Comida & bebida", title: "Favoritos", items: ["Bubble Tea", "Abacate", "Poke"], tone: "accent" },
   { label: "Na playlist", title: "Hora de Aventura", items: ["Sou Seu Problema", "Island Song"], tone: "ink" },
@@ -242,8 +245,149 @@ function FactCard({ f, i, accent }: { f: Fact; i: number; accent: Accent }) {
   );
 }
 
+const tainaEdu = {
+  escola: "IED Madrid",
+  local: "Madrid, Espanha",
+  espec: ["Design Gráfico", "Comunicação Digital", "Design Têxtil"],
+  dormitorio: "Residência Barkóczy",
+  descricao:
+    "Onde transformei noites em claro no Illustrator (movidas a muito Bubble Tea) em profissão. Dupla graduação com foco em unir minhas raízes afro-indígenas às tendências do design moderno europeu. Foi nesses corredores que afiei meu olhar artístico e me preparei para assumir a Direção de Arte e Criação do império da Agência Barkóczy, sempre com o objetivo de dar o maior orgulho do mundo ao meu padrinho.",
+  atividades: [
+    "Laboratório de Ilustração Digital",
+    "Exposições de Arte Têxtil",
+    "Criação de Identidades Visuais",
+    "Principal idealizador do cardápio do El Grifo Café & Pastelería, nos intervalos das aulas",
+  ],
+  disciplinas: [
+    "Edição Avançada de Fotografia",
+    "Ilustração Digital e Vetorial",
+    "Design de Interfaces (Criação de Sites/UX)",
+    "Estamparia e Direção Têxtil",
+    "Tipografia Clássica e Moderna",
+    "Identidade Visual e Branding",
+    "História da Arte Contemporânea",
+    "Antropologia Cultural Aplicada ao Design",
+  ],
+};
+
+const tainaExps = [
+  {
+    badge: "Trabalho atual",
+    empresa: "Agência Barkóczy",
+    cargo: "Diretor de Arte e Criação",
+    local: "Madrid, Espanha",
+    descricao:
+      "A mente por trás da identidade visual e da estética impecável da maior agência da comunidade. Sou responsável por criar designs, sites, ilustrações e identidades visuais de grandes projetos. Enquanto o meu padrinho e patriarca, Dashiell, lidera o império com estratégia e pulso firme, o meu papel é dar cor, forma e modernidade ao nosso legado. Transformo noites em claro no Illustrator em arte pura.",
+    tone: "primary" as const,
+  },
+  {
+    badge: "Projeto de paixão",
+    empresa: "El Grifo Café & Pastelería",
+    cargo: "Fundador e Idealizador",
+    local: "Madrid, Espanha",
+    descricao:
+      "O meu projeto de paixão dentro do império da família. Idealizei o El Grifo com a missão de criar o ponto de encontro perfeito para mentes criativas (e estudantes do Instituto Barkóczy). Apesar de ironicamente detestar café puro, trabalhei lado a lado com os melhores chefs europeus para desenvolver um menu onde o café brilha como ingrediente em doces e bebidas únicas. E, claro, exigi uma seção sagrada no menu dedicada exclusivamente ao chocolate. É o meu refúgio e o nosso ponto de encontro oficial.",
+    tone: "cafe" as const,
+  },
+];
+
+const expCls = {
+  primary: "bg-primary text-primary-foreground",
+  cafe: "bg-cafe text-cafe-foreground",
+};
+
+function Curriculo() {
+  return (
+    <div>
+      <div className="mb-12">
+        <p className="text-xs font-black uppercase tracking-[0.4em] text-pink">O currículo do herdeiro</p>
+        <h3 className="mt-3 text-4xl font-black uppercase tracking-tight md:text-6xl">
+          Formação & <span className="text-pink">Carreira</span>
+        </h3>
+      </div>
+
+      <div className="grid gap-4 lg:grid-cols-2">
+        <div className="relative overflow-hidden rounded-[2rem] rounded-tr-none bg-pink p-8 text-pink-foreground transition-transform hover:-translate-y-1 md:p-10">
+          <span className="pointer-events-none absolute -right-3 -top-6 text-7xl font-black opacity-10">01</span>
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-70">Educação · {tainaEdu.local}</p>
+          <p className="mt-2 text-3xl font-black leading-tight">{tainaEdu.escola}</p>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.3em] opacity-80">Especialização</p>
+              <ul className="mt-2 space-y-1 text-sm font-bold opacity-85">
+                {tainaEdu.espec.map((s) => <li key={s}>— {s}</li>)}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.3em] opacity-80">Atividades</p>
+              <ul className="mt-2 space-y-1 text-sm font-bold opacity-85">
+                {tainaEdu.atividades.map((a) => <li key={a}>— {a}</li>)}
+              </ul>
+            </div>
+          </div>
+          <blockquote className="mt-6 border-l-4 border-pink-foreground/40 pl-4 text-sm italic leading-relaxed opacity-90">
+            “{tainaEdu.descricao}”
+          </blockquote>
+          <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] opacity-80">
+            Dormitório: {tainaEdu.dormitorio} — dormitório estudantil nunca; a residência oficial é a casa que divide com o padrinho
+          </p>
+        </div>
+
+        <div className="relative overflow-hidden rounded-[2rem] rounded-bl-none bg-ink p-8 text-ink-foreground transition-transform hover:-translate-y-1 md:p-10">
+          <span className="pointer-events-none absolute -right-3 -top-6 text-7xl font-black opacity-10">02</span>
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-70">Trabalho atual</p>
+          <p className="mt-2 text-3xl font-black leading-tight">Grupo Barkóczy</p>
+          <p className="mt-1 text-lg font-black text-pink">Sócio-herdeiro & Diretor de Arte</p>
+          <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] opacity-70">Madrid, Espanha · Desde 2024</p>
+          <span className="mt-4 inline-block rounded-full bg-pink px-4 py-2 text-[10px] font-black uppercase tracking-[0.3em] text-pink-foreground">
+            Eu trabalho aqui atualmente
+          </span>
+          <blockquote className="mt-6 border-l-4 border-ink-foreground/30 pl-4 text-sm italic leading-relaxed opacity-90">
+            “A mente criativa e o coração digital por trás das inovações da Família Barkóczy. Atuando como Sócio-herdeiro e Diretor de Arte não-oficial, sou responsável por traduzir o imenso legado e prestígio construído pelo meu padrinho, o patriarca Dashiell Barkóczy, para a era digital. O meu trabalho vai desde a construção da identidade visual da Agência Barkóczy, criação de sites e design de interfaces, até à concepção estética da Editorial Barkóczy e a elaboração do cardápio do nosso 'El Grifo Café & Pastelería' (onde garanto que não falta chocolate). Mais do que herdar um império, o meu objetivo de vida é perpetuar a excelência do nome Barkóczy e ser o maior motivo de orgulho do meu padrinho, unindo o poder da velha Europa às minhas vibrantes raízes afro-indígenas através da arte e do design.”
+          </blockquote>
+        </div>
+      </div>
+
+      <div className="mt-4 rounded-[2rem] bg-muted p-8 md:p-10">
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">Disciplinas · IED Madrid</p>
+        <p className="mt-2 text-2xl font-black">As matérias que lapidaram o olhar dele</p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {tainaEdu.disciplinas.map((d) => (
+            <span key={d} className="rounded-full border border-foreground/15 px-4 py-2 text-xs font-bold">{d}</span>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <h4 className="mb-6 text-2xl font-black uppercase tracking-tight md:text-4xl">
+          Experiências <span className="text-pink">·</span> <span className="text-muted-foreground">onde ele deixa a marca</span>
+        </h4>
+        <div className="grid gap-4 lg:grid-cols-2">
+          {tainaExps.map((e) => (
+            <div
+              key={e.empresa}
+              className={`relative overflow-hidden rounded-[2rem] p-8 transition-transform hover:-translate-y-1 md:p-10 ${
+                e.tone === "primary" ? "rounded-tl-none" : "rounded-bl-none"
+              } ${expCls[e.tone]}`}
+            >
+              <span className="inline-block bg-ink px-3 py-1 text-[10px] font-black uppercase tracking-[0.3em] text-ink-foreground">
+                {e.badge}
+              </span>
+              <p className="mt-4 text-2xl font-black uppercase tracking-tight md:text-3xl">{e.empresa}</p>
+              <p className="mt-1 text-base font-black">{e.cargo}</p>
+              <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] opacity-70">{e.local}</p>
+              <blockquote className="mt-5 border-l-4 border-ink-foreground/40 pl-4 text-sm italic leading-relaxed opacity-90">
+                “{e.descricao}”
+              </blockquote>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Member({
-  name, role, born, text, facts, link, linkLabel, rev, accent = "blue",
 }: {
   name: string; role: string; born: string; text: string[]; facts: Fact[]; link: string; linkLabel: string;
   rev?: boolean | undefined; accent?: Accent | undefined;
@@ -343,6 +487,7 @@ function Index() {
               name="Tainã Barkóczy" role="O Herdeiro" born="4 de setembro · Madrid"
               text={tainaText} facts={tainaFacts} link={LINKS.taina} linkLabel="Perfil de Tainã" rev accent="pink"
             />
+            <Curriculo />
           </div>
         </div>
       </section>
