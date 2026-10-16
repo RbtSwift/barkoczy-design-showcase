@@ -496,7 +496,7 @@ function Index() {
         <div className="absolute -left-20 bottom-32 h-24 w-[140%] -rotate-12 bg-primary" />
         <div className="absolute -left-20 bottom-12 h-8 w-[140%] -rotate-12 bg-ink" />
         <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full border-[2.5rem] border-primary" />
-        <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-8">
+        <nav className="relative z-20 mx-auto mt-6 flex max-w-7xl items-center justify-between rounded-full bg-white/70 px-8 py-4 shadow-sm backdrop-blur-md">
           <div className="flex items-center gap-3">
             <img src="/brasao-grifo.png" alt="Brasão da Família Barkóczy" className="h-10 w-10 object-contain" />
             <span className="text-xs font-black uppercase tracking-[0.35em]">Barkóczy</span>
