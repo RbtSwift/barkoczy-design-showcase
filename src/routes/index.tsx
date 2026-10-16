@@ -1,5 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import brasao from "@/assets/brasao.png.asset.json";
+import brasaoBranco from "@/assets/brasao-branco.png.asset.json";
+import brasaoLuz from "@/assets/brasao-luz.png.asset.json";
+import escudo from "@/assets/escudo.png.asset.json";
+import wordmarkLuz from "@/assets/wordmark-luz.png.asset.json";
+
 const LINKS = {
   dashiell: "https://www.facebook.com/profile.php?id=61594191305147",
   taina: "https://www.facebook.com/HerdeiroLeclerc/",
@@ -255,14 +261,22 @@ function Index() {
     <main className="overflow-x-hidden bg-background">
       {/* HERO */}
       <header className="relative min-h-screen overflow-hidden bg-muted">
-        <div className="absolute -right-40 -top-40 h-[42rem] w-[42rem] rounded-full bg-ink" />
-        <div className="absolute -right-10 top-24 h-[30rem] w-[30rem] rounded-full border-[3rem] border-background" />
+        <div className="absolute -right-24 -top-24 h-[14rem] w-[14rem] rounded-full bg-ink md:-right-32 md:-top-32 md:h-[20rem] md:w-[20rem] lg:-right-40 lg:-top-40 lg:h-[24rem] lg:w-[24rem] xl:h-[32rem] xl:w-[32rem]" />
+        <div className="absolute -right-10 top-24 h-[30rem] w-[30rem] rounded-full border-[3rem] border-background xl:hidden" />
         <div className="absolute -left-20 bottom-32 h-24 w-[140%] -rotate-12 bg-primary" />
         <div className="absolute -left-20 bottom-12 h-8 w-[140%] -rotate-12 bg-ink" />
         <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full border-[2.5rem] border-primary" />
+        <img
+          src={escudo.url}
+          alt="Brasão da Família Barkóczy"
+          className="pointer-events-none absolute right-10 top-24 hidden w-40 xl:block"
+        />
 
         <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-8">
-          <span className="text-lg font-black tracking-tight">B<span className="text-primary">.</span></span>
+          <div className="flex items-center gap-3">
+            <img src={escudo.url} alt="Brasão da Família Barkóczy" className="h-10 w-auto" />
+            <span className="text-xs font-black uppercase tracking-[0.35em]">Barkóczy</span>
+          </div>
           <div className="hidden gap-8 text-xs font-bold uppercase tracking-[0.3em] md:flex">
             <a href="#familia" className="hover:text-primary">A Família</a>
             <a href="#grupo" className="hover:text-primary">O Grupo</a>
@@ -300,6 +314,11 @@ function Index() {
               name="Dashiell Barkóczy" role="Patriarca" born="8 de abril · Espanha"
               text={dashiellText} facts={dashiellFacts} link={LINKS.dashiell} linkLabel="Perfil de Dashiell"
             />
+            <div className="flex items-center gap-10 md:gap-24">
+              <span className="h-px flex-1 bg-ink/10" />
+              <img src={brasao.url} alt="Brasão da Família Barkóczy" className="w-40 md:w-56" />
+              <span className="h-px flex-1 bg-ink/10" />
+            </div>
             <Member
               name="Tainã Barkóczy" role="O Herdeiro" born="4 de setembro · Madrid"
               text={tainaText} facts={tainaFacts} link={LINKS.taina} linkLabel="Perfil de Tainã" rev accent="pink"
@@ -310,9 +329,16 @@ function Index() {
 
       {/* GRUPO */}
       <section id="grupo" className="relative">
-        <div className="clip-diag-rev bg-ink pb-32 pt-48 text-ink-foreground">
-          <div className="pointer-events-none absolute right-0 top-40 h-[28rem] w-[28rem] translate-x-1/3 rounded-full border-[3rem] border-primary" />
+        <div className="clip-diag-rev bg-ink pb-32 pt-[20rem] text-ink-foreground">
+          <div className="pointer-events-none absolute right-0 top-[52rem] h-[28rem] w-[28rem] translate-x-1/3 rounded-full border-[3rem] border-primary" />
           <div className="relative mx-auto max-w-7xl px-6">
+            <div className="mb-24 flex flex-col items-center text-center">
+              <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-ink-foreground/70">
+                Honra · Tradição · Distinção · Orgulho
+              </p>
+              <img src={brasaoLuz.url} alt="Brasão da Família Barkóczy" className="mt-10 w-64 md:w-96" />
+              <span className="mt-10 h-1 w-28 bg-primary" />
+            </div>
             <div className="mb-16 flex items-end gap-6">
               <span className="text-8xl font-black leading-none text-primary md:text-[10rem]">02</span>
               <h2 className="pb-4 text-4xl font-black uppercase tracking-tight md:text-6xl">
@@ -347,6 +373,14 @@ function Index() {
                       negocioCls[n.tone]
                     } ${n.tone === "primary" ? "lg:col-span-2" : ""}`}
                   >
+                    {n.tone === "primary" && (
+                      <img
+                        src={brasaoBranco.url}
+                        alt=""
+                        aria-hidden="true"
+                        className="pointer-events-none absolute -bottom-12 -right-8 w-40 opacity-15 md:w-56"
+                      />
+                    )}
                     <span className="pointer-events-none absolute -right-2 -top-6 text-[8rem] font-black leading-none opacity-15">0{i + 1}</span>
                     <p className="text-xs font-bold uppercase tracking-[0.3em] opacity-70">{n.tag}</p>
                     <h4 className="mt-2 text-2xl font-black uppercase tracking-tight md:text-3xl">{n.name}</h4>
@@ -399,6 +433,7 @@ function Index() {
 
       {/* FOOTER */}
       <footer className="border-t border-ink-foreground/10 bg-ink text-ink-foreground">
+        <img src={wordmarkLuz.url} alt="Barkóczy" className="mx-auto mt-12 w-56 md:w-72" />
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between">
           <p className="text-sm">Família Barkóczy © 2026. Todos os direitos reservados.</p>
           <div className="flex flex-wrap gap-6 text-xs font-bold uppercase tracking-widest">
