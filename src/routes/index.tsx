@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 const LINKS = {
-  dashiell: "[https://www.facebook.com/profile.php?id=61594191305147](https://www.facebook.com/profile.php?id=61594191305147)",
-  taina: "[https://www.facebook.com/HerdeiroLeclerc/](https://www.facebook.com/HerdeiroLeclerc/)",
-  agencia: "[https://www.facebook.com/groups/agenciaclubesecreto2](https://www.facebook.com/groups/agenciaclubesecreto2)",
+  dashiell: "https://www.facebook.com/profile.php?id=61594191305147",
+  taina: "https://www.facebook.com/HerdeiroLeclerc/",
+  agencia: "https://www.facebook.com/groups/agenciaclubesecreto2",
 };
 
 export const Route = createFileRoute("/")({
@@ -161,7 +161,7 @@ function Btn({
       target="_blank"
       rel="noopener noreferrer"
       className={`group inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-extrabold uppercase tracking-widest transition-all hover:-translate-y-0.5 ${
-        dark ? "bg-ink text-ink-foreground hover:bg-primary" : `${accents[accent].solid} hover:bg-ink`
+        dark ? "bg-ink text-ink-foreground hover:bg-primary" : `\${accents[accent].solid} hover:bg-ink`
       }`}
     >
       {children}
@@ -172,7 +172,7 @@ function Btn({
 
 type Accent = "blue" | "pink";
 
-const accents: Record<Accent, solid: string string; text: { }> = {
+const accents: Record<Accent, { solid: string; text: string }> = {
   blue: { solid: "bg-primary text-primary-foreground", text: "text-primary" },
   pink: { solid: "bg-pink text-pink-foreground", text: "text-pink" },
 };
@@ -467,7 +467,7 @@ function Member({
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {facts.map((f, i) => <FactCard accent="{accent}" f="{f}" i="{i}" key="{f.label}"/>)}
+        {facts.map((f, i) => <FactCard accent={accent} f={f} i={i} key={f.label} />)}
       </div>
 
       <div className="mt-16 grid gap-10 lg:grid-cols-12">
@@ -478,7 +478,7 @@ function Member({
         <div className="space-y-5 text-base leading-relaxed text-foreground/85 md:text-lg lg:col-span-9">
           {text.map((p, i) => <p key={i}>{p}</p>)}
           <div className="pt-6">
-            <Btn accent="{accent}" href="{link}">{linkLabel}</Btn>
+            <Btn accent={accent} href={link}>{linkLabel}</Btn>
           </div>
         </div>
       </div>
@@ -534,15 +534,15 @@ function Index() {
             </h2>
           </div>
           <div className="space-y-40">
-            <Member born="8 de abril · Espanha" facts="{dashiellFacts}" link="{LINKS.dashiell}" linkLabel="Perfil de Dashiell" name="Dashiell Barkóczy" role="Patriarca" text="{dashiellText}"/>
-            <DashCurriculo/>
+            <Member born="8 de abril · Espanha" facts={dashiellFacts} link={LINKS.dashiell} linkLabel="Perfil de Dashiell" name="Dashiell Barkóczy" role="Patriarca" text={dashiellText} />
+            <DashCurriculo />
             <div className="flex items-center gap-10 md:gap-24">
               <span className="h-px flex-1 bg-ink/10" />
               <img src="/nome-barkoczy.png" alt="Barkóczy" className="mx-auto w-64 object-contain md:w-80" />
               <span className="h-px flex-1 bg-ink/10" />
             </div>
-            <Member accent="pink" born="4 de setembro · Madrid" facts="{tainaFacts}" link="{LINKS.taina}" linkLabel="Perfil de Tainã" name="Tainã Barkóczy" rev role="O Herdeiro" text="{tainaText}"/>
-            <Curriculo/>
+            <Member accent="pink" born="4 de setembro · Madrid" facts={tainaFacts} link={LINKS.taina} linkLabel="Perfil de Tainã" name="Tainã Barkóczy" rev role="O Herdeiro" text={tainaText} />
+            <Curriculo />
           </div>
         </div>
       </section>
@@ -651,10 +651,10 @@ function Index() {
                 <span>"Todas as decisões são do Dashiell — e ele sempre ouve o afilhado. As duas causas principais nasceram do amor por Tainã."</span>
               </blockquote>
               <div className="grid gap-4 lg:grid-cols-2">
-                {causas.filter((c) => c.tag).map((c) => <CauseCard c="{c}" key="{c.name}"/>)}
+                {causas.filter((c) => c.tag).map((c) => <CauseCard c={c} key={c.name} />)}
               </div>
               <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                {causas.filter((c) => !c.tag).map((c) => <CauseCard c="{c}" key="{c.name}"/>)}
+                {causas.filter((c) => !c.tag).map((c) => <CauseCard c={c} key={c.name} />)}
               </div>
             </div>
 
