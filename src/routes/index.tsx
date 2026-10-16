@@ -48,13 +48,13 @@ type Causa = { name: string; desc: string; tag?: string | undefined; tone: "prim
 
 const causas: Causa[] = [
   {
-    tag: "Causa principal",
+    tag: "Decisão 100% Dashiell",
     name: "Causas LGBTQIA+",
     desc: "Começou no dia em que Tainã se assumiu gay. Ao perceber que o medo do afilhado vinha de uma sociedade cheia de preconceitos, Dashiell pensou em todas as pessoas LGBTQIA+ sem alguém para acolhê-las — e decidiu apoiar a causa por ele, para que o filho viva em um mundo livre de preconceitos.",
     tone: "primary",
   },
   {
-    tag: "Causa principal",
+    tag: "Decisão 100% Dashiell",
     name: "Escolas na Amazônia",
     desc: "Começou no dia em que Dashiell adotou Tainã. Contribuição estrutural a escolas e projetos educacionais da região — a homenagem silenciosa, poderosa e eterna da família ao sangue afro-indígena de Tainã e ao legado ativista de sua mãe.",
     tone: "light",
@@ -284,6 +284,9 @@ function Index() {
                   Mais de 20 milhões de euros por ano em apoio direto
                 </p>
               </div>
+              <blockquote className="mb-10 border-l-4 border-primary pl-6 text-xl font-bold leading-snug md:text-2xl">
+                “Todas as decisões são do Dashiell — e ele sempre ouve o afilhado. As duas causas principais nasceram do amor por Tainã.”
+              </blockquote>
               <div className="grid gap-4 lg:grid-cols-2">
                 {causas.filter((c) => c.tag).map((c) => <CauseCard key={c.name} c={c} />)}
               </div>
