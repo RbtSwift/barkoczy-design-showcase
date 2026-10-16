@@ -388,6 +388,7 @@ function Curriculo() {
 }
 
 function Member({
+  name, role, born, text, facts, link, linkLabel, rev, accent = "blue",
 }: {
   name: string; role: string; born: string; text: string[]; facts: Fact[]; link: string; linkLabel: string;
   rev?: boolean | undefined; accent?: Accent | undefined;
