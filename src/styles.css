@@ -41,6 +41,8 @@
   --color-instituto-foreground: var(--instituto-foreground);
   --color-cafe: var(--cafe);
   --color-cafe-foreground: var(--cafe-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
 }
 
 :root {
@@ -79,6 +81,9 @@
   --instituto-foreground: oklch(0.98 0 0);
   --cafe: oklch(0.42 0.07 55); /* coffee brown — El Grifo Café */
   --cafe-foreground: oklch(0.98 0 0);
+  /* Gold #e3b341 — highlight colour of the Grupo Barkóczy section */
+  --gold: oklch(0.79 0.139 85.2);
+  --gold-foreground: oklch(0 0 0);
 }
 
 @layer base {
