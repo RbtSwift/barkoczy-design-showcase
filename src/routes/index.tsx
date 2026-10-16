@@ -88,14 +88,18 @@ function CauseCard({ c }: { c: Causa }) {
 }
 
 
-function Btn({ href, children, dark }: { href: string; children: React.ReactNode; dark?: boolean | undefined }) {
+function Btn({
+  href, children, dark, accent = "blue",
+}: {
+  href: string; children: React.ReactNode; dark?: boolean | undefined; accent?: Accent | undefined;
+}) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={`group inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-extrabold uppercase tracking-widest transition-all hover:-translate-y-0.5 ${
-        dark ? "bg-ink text-ink-foreground hover:bg-primary" : "bg-primary text-primary-foreground hover:bg-ink"
+        dark ? "bg-ink text-ink-foreground hover:bg-primary" : `${accents[accent].solid} hover:bg-ink`
       }`}
     >
       {children}
@@ -103,6 +107,13 @@ function Btn({ href, children, dark }: { href: string; children: React.ReactNode
     </a>
   );
 }
+
+type Accent = "blue" | "pink";
+
+const accents: Record<Accent, { solid: string; text: string }> = {
+  blue: { solid: "bg-primary text-primary-foreground", text: "text-primary" },
+  pink: { solid: "bg-pink text-pink-foreground", text: "text-pink" },
+};
 
 type Fact = { label: string; title: string; items?: string[]; tone: "accent" | "ink" | "light" };
 
@@ -129,16 +140,16 @@ const tainaFacts: Fact[] = [
   { label: "Marca na alma", title: "Japão", items: ["Viagem inesquecível", "Amor pela cultura pop"], tone: "light" },
 ];
 
-const toneCls = {
-  blue: "bg-primary text-primary-foreground",
-  ink: "bg-ink text-ink-foreground",
-  light: "bg-muted text-foreground",
+const toneCls: Record<Fact["tone"], Record<Accent, string>> = {
+  accent: { blue: accents.blue.solid, pink: accents.pink.solid },
+  ink: { blue: "bg-ink text-ink-foreground", pink: "bg-ink text-ink-foreground" },
+  light: { blue: "bg-muted text-foreground", pink: "bg-muted text-foreground" },
 };
 
-function FactCard({ f, i }: { f: Fact; i: number }) {
+function FactCard({ f, i, accent }: { f: Fact; i: number; accent: Accent }) {
   const shape = i % 3 === 0 ? "rounded-[2rem] rounded-tr-none" : i % 3 === 1 ? "rounded-[2rem] rounded-bl-none" : "rounded-[2rem]";
   return (
-    <div className={`${toneCls[f.tone]} ${shape} relative overflow-hidden p-6 transition-transform hover:-translate-y-1`}>
+    <div className={`${toneCls[f.tone][accent]} ${shape} relative overflow-hidden p-6 transition-transform hover:-translate-y-1`}>
       <span className="absolute -right-3 -top-6 text-7xl font-black opacity-10">{String(i + 1).padStart(2, "0")}</span>
       <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-70">{f.label}</p>
       <p className="mt-2 text-2xl font-black leading-tight">{f.title}</p>
@@ -152,17 +163,18 @@ function FactCard({ f, i }: { f: Fact; i: number }) {
 }
 
 function Member({
-  name, role, born, text, facts, link, linkLabel, rev,
+  name, role, born, text, facts, link, linkLabel, rev, accent = "blue",
 }: {
-  name: string; role: string; born: string; text: string[]; facts: Fact[]; link: string; linkLabel: string; rev?: boolean | undefined;
+  name: string; role: string; born: string; text: string[]; facts: Fact[]; link: string; linkLabel: string;
+  rev?: boolean | undefined; accent?: Accent | undefined;
 }) {
   const [first, last] = name.split(" ");
   return (
     <article className="relative">
       <div className={`flex flex-col gap-4 md:flex-row md:items-end md:justify-between ${rev ? "md:flex-row-reverse md:text-right" : ""}`}>
         <div>
-          <span className="inline-block bg-primary px-4 py-2 text-xs font-black uppercase tracking-[0.3em] text-primary-foreground">{role}</span>
-          <h3 className="mt-4 text-6xl font-black leading-[0.9] tracking-tight text-primary md:text-9xl">
+          <span className={`inline-block px-4 py-2 text-xs font-black uppercase tracking-[0.3em] ${accents[accent].solid}`}>{role}</span>
+          <h3 className={`mt-4 text-6xl font-black leading-[0.9] tracking-tight md:text-9xl ${accents[accent].text}`}>
             {first}
             <span className="block text-outline">{last}</span>
           </h3>
@@ -171,7 +183,7 @@ function Member({
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {facts.map((f, i) => <FactCard key={f.label} f={f} i={i} />)}
+        {facts.map((f, i) => <FactCard key={f.label} f={f} i={i} accent={accent} />)}
       </div>
 
       <div className="mt-16 grid gap-10 lg:grid-cols-12">
@@ -182,7 +194,7 @@ function Member({
         <div className="space-y-5 text-base leading-relaxed text-foreground/85 md:text-lg lg:col-span-9">
           {text.map((p, i) => <p key={i}>{p}</p>)}
           <div className="pt-6">
-            <Btn href={link}>{linkLabel}</Btn>
+            <Btn href={link} accent={accent}>{linkLabel}</Btn>
           </div>
         </div>
       </div>
@@ -242,7 +254,7 @@ function Index() {
             />
             <Member
               name="Tainã Barkóczy" role="O Herdeiro" born="4 de setembro · Madrid"
-              text={tainaText} facts={tainaFacts} link={LINKS.taina} linkLabel="Perfil de Tainã" rev
+              text={tainaText} facts={tainaFacts} link={LINKS.taina} linkLabel="Perfil de Tainã" rev accent="pink"
             />
           </div>
         </div>
