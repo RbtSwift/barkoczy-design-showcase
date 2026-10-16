@@ -397,7 +397,28 @@ function Index() {
               </div>
             </div>
 
-
+            <div className="mt-24">
+              <h3 className="mb-6 text-3xl font-black uppercase tracking-tight md:text-5xl">
+                Nos <span className="gold-text">holofotes</span>
+              </h3>
+              <p className="mb-10 max-w-2xl text-base leading-relaxed text-ink-foreground/70 md:text-lg">
+                O Grupo Barkóczy já foi mencionado, entrevistado e premiado pelas revistas mais renomadas da Europa e do mundo.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {revistas.map((r) => (
+                  <article
+                    key={r.name}
+                    className="flex flex-col gap-4 rounded-3xl border border-gold/30 bg-ink-foreground/5 p-8 transition-transform hover:-translate-y-1"
+                  >
+                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink-foreground/50">{r.tag}</span>
+                    <span className="gold-text text-2xl font-black italic md:text-3xl" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
+                      {r.name}
+                    </span>
+                    <p className="text-sm leading-relaxed text-ink-foreground/80 md:text-base">{r.quote}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
 
             <div className="mt-24">
               <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
