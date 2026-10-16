@@ -42,7 +42,42 @@ const grupoText = [
   "Cada frente de apoio caritativo carrega uma assinatura pessoal e emocional da família. O amor imensurável de Dashiell pelos animais — visível nos cães e gatos que enchem sua casa de vida — reflete-se diretamente no financiamento robusto de diversas ONGs dedicadas ao resgate e proteção animal. De forma igualmente emocionante, o grupo atua como um pilar financeiro inabalável para escolas e projetos educacionais na Amazônia. Esta é uma homenagem silenciosa, poderosa e eterna que honra o sangue afro-indígena de Tainã e perpetua o legado ativista de sua mãe. Dessa forma, o Grupo Barkóczy transcende o conceito de corporação, provando que a verdadeira elegância de sua história não reside apenas na fortuna ou no status que acumula, mas no mundo mais justo, belo e acolhedor que ajuda a construir.",
 ];
 
-const empresas = ["Agência Barkóczy", "Escola de Artes", "Teatro", "Editora", "Cafeteria"];
+const empresas = ["Agência Barkóczy", "Teatro Real", "Editorial", "Instituto de Artes", "El Grifo Café"];
+
+type Negocio = { name: string; tag: string; facts: string[]; text: string; pink?: boolean | undefined };
+const negocios: Negocio[] = [
+  {
+    name: "Agência Barkóczy",
+    tag: "A pedra fundamental",
+    facts: ["Fundada por Dashiell", "Direção de arte: Tainã", "O coração pulsante de Madrid"],
+    text: "Começou como um núcleo de excelência em comunicação e rapidamente se tornou o epicentro social de toda a comunidade — o espaço onde laços são formados, projetos nascem e a vida cotidiana acontece em sua forma mais autêntica. Dashiell ergueu as pilastras inabaláveis do negócio com sua visão de liderança; Tainã, ao assumir a direção de arte, injetou sangue novo, modernidade e uma estética visual incomparável, consolidando a marca como o coração pulsante de Madrid e da comunidade virtual.",
+  },
+  {
+    name: "Teatro Real Barkóczy",
+    tag: "Símbolo máximo de status",
+    facts: ["Edifício histórico restaurado", "Óperas, peças e exposições", "Veludo carmesim e ouro"],
+    text: "Nascido da paixão de Dashiell pela arquitetura clássica e pela alta cultura espanhola e europeia. Ele adquiriu um edifício histórico no coração de Madrid e o restaurou de forma impecável, transformando-o no palco mais prestigiado da Espanha — onde a elite cultural se encontra sob o olhar vigilante e o patrocínio generoso dos Barkóczy.",
+  },
+  {
+    name: "Editorial Barkóczy",
+    tag: "Memória e prestígio",
+    facts: ["Curadoria: Dashiell", "Concepção gráfica: Tainã", "Capas de colecionador"],
+    text: "Para Dashiell, a memória e a história são o bem mais precioso de uma família — o mesmo respeito que o fez resgatar a história do falecido amigo e de Tainã. A editora é reconhecida por publicações de altíssimo padrão literário e acadêmico. Sob as mãos de Tainã, cada livro ganha capas que são verdadeiras peças de arte, cobiçadas em todo o mundo.",
+  },
+  {
+    name: "Instituto Barkóczy de Artes Creativas",
+    tag: "Ponte entre gerações",
+    facts: ["Design gráfico, têxtil e digital", "Inspirado no talento de Tainã", "Bolsas para América do Sul e África"],
+    text: "Dashiell fundou a escola inspirado pelo talento precoce de Tainã para o design e as artes visuais. Hoje é a instituição mais moderna e renomada da Espanha na área. Por exigência pessoal de Tainã, em honra às suas raízes e à memória de seus pais — o fotojornalista e a ativista —, o instituto mantém um programa robusto de bolsas integrais para jovens talentos da América do Sul e da África.",
+  },
+  {
+    name: "El Grifo Café & Pastelería",
+    tag: "Um projeto 100% Tainã",
+    pink: true,
+    facts: ["Tainã detesta café puro", "O café é a estrela oculta", "Seção intocável de chocolate"],
+    text: "A cafeteria mais badalada da cidade — e o detalhe irônico é que Tainã detesta o sabor do café puro. Fascinado pelo café como ingrediente, ele trabalhou lado a lado com chefs e baristas europeus num cardápio de entremets, tortas, frapês e coquetéis, cada um com seu próprio brilho. Para o seu lado formiga, exigiu uma seção exclusiva de chocolate: chocolates quentes densos, brownies e trufas. Sob o brasão do Grifo, é o ponto de encontro dos alunos do Instituto, das reuniões informais de Dashiell e o abastecimento de doces de Tainã nas madrugadas de design.",
+  },
+];
 
 type Causa = { name: string; desc: string; tag?: string | undefined; tone: "primary" | "light" | "outline" };
 
