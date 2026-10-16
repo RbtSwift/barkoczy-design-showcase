@@ -398,8 +398,9 @@ function Index() {
                   Mais de 20 milhões de euros por ano em apoio direto
                 </p>
               </div>
-              <blockquote className="mb-10 border-l-4 border-gold pl-6 text-xl font-bold leading-snug md:text-2xl">
-                “Todas as decisões são do Dashiell — e ele sempre ouve o afilhado. As duas causas principais nasceram do amor por Tainã.”
+              <blockquote className="mb-10 flex gap-6 text-xl font-bold leading-snug md:text-2xl">
+                <span aria-hidden="true" className="w-1 shrink-0 rounded-full gold-gradient" />
+                <span>“Todas as decisões são do Dashiell — e ele sempre ouve o afilhado. As duas causas principais nasceram do amor por Tainã.”</span>
               </blockquote>
               <div className="grid gap-4 lg:grid-cols-2">
                 {causas.filter((c) => c.tag).map((c) => <CauseCard key={c.name} c={c} />)}
