@@ -44,7 +44,7 @@ const grupoText = [
 
 const empresas = ["Agência Barkóczy", "Escola de Artes", "Teatro", "Editora", "Cafeteria"];
 
-function Btn({ href, children, dark }: { href: string; children: React.ReactNode; dark?: boolean }) {
+function Btn({ href, children, dark }: { href: string; children: React.ReactNode; dark?: boolean | undefined }) {
   return (
     <a
       href={href}
@@ -60,7 +60,7 @@ function Btn({ href, children, dark }: { href: string; children: React.ReactNode
   );
 }
 
-function Portrait({ src, alt, rev }: { src: string; alt: string; rev?: boolean }) {
+function Portrait({ src, alt, rev }: { src: string; alt: string; rev?: boolean | undefined }) {
   return (
     <div className={`relative ${rev ? "radius-asym-rev" : "radius-asym"} overflow-hidden shadow-2xl`}>
       <img src={src} alt={alt} width={896} height={1152} loading="lazy" className="duotone h-full w-full object-cover" />
@@ -72,7 +72,7 @@ function Portrait({ src, alt, rev }: { src: string; alt: string; rev?: boolean }
 function Member({
   name, role, born, text, img, link, linkLabel, rev,
 }: {
-  name: string; role: string; born: string; text: string[]; img: string; link: string; linkLabel: string; rev?: boolean;
+  name: string; role: string; born: string; text: string[]; img: string; link: string; linkLabel: string; rev?: boolean | undefined;
 }) {
   const [first, last] = name.split(" ");
   return (
