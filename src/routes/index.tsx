@@ -289,6 +289,32 @@ function Index() {
             </div>
 
             <div className="mt-24">
+              <h3 className="mb-10 text-3xl font-black uppercase tracking-tight md:text-5xl">
+                Os <span className="text-primary">empreendimentos</span>
+              </h3>
+              <div className="grid gap-4 lg:grid-cols-2">
+                {negocios.map((n, i) => (
+                  <article
+                    key={n.name}
+                    className={`relative overflow-hidden rounded-3xl p-8 md:p-10 ${
+                      i === 0 ? "bg-primary text-primary-foreground lg:col-span-2" : n.pink ? "bg-pink text-pink-foreground" : "border border-ink-foreground/20"
+                    }`}
+                  >
+                    <span className="pointer-events-none absolute -right-2 -top-6 text-[8rem] font-black leading-none opacity-15">0{i + 1}</span>
+                    <p className="text-xs font-bold uppercase tracking-[0.3em] opacity-70">{n.tag}</p>
+                    <h4 className="mt-2 text-2xl font-black uppercase tracking-tight md:text-3xl">{n.name}</h4>
+                    <ul className="mt-4 space-y-1 text-sm font-bold">
+                      {n.facts.map((f) => <li key={f}>— {f}</li>)}
+                    </ul>
+                    <p className="mt-5 text-sm leading-relaxed opacity-85 md:text-base">{n.text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+
+
+            <div className="mt-24">
               <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
                 <h3 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
                   Para onde vão os <span className="text-primary">20 milhões</span>
