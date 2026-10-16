@@ -71,19 +71,21 @@ const negocios: Negocio[] = [
   {
     name: "Editorial Barkóczy",
     tag: "Memória e prestígio",
+    tone: "editorial",
     facts: ["Curadoria: Dashiell", "Concepção gráfica: Tainã", "Capas de colecionador"],
     text: "Para Dashiell, a memória e a história são o bem mais precioso de uma família — o mesmo respeito que o fez resgatar a história do falecido amigo e de Tainã. A editora é reconhecida por publicações de altíssimo padrão literário e acadêmico. Sob as mãos de Tainã, cada livro ganha capas que são verdadeiras peças de arte, cobiçadas em todo o mundo.",
   },
   {
     name: "Instituto Barkóczy de Artes Creativas",
     tag: "Ponte entre gerações",
+    tone: "instituto",
     facts: ["Design gráfico, têxtil e digital", "Inspirado no talento de Tainã", "Bolsas para América do Sul e África"],
     text: "Dashiell fundou a escola inspirado pelo talento precoce de Tainã para o design e as artes visuais. Hoje é a instituição mais moderna e renomada da Espanha na área. Por exigência pessoal de Tainã, em honra às suas raízes e à memória de seus pais — o fotojornalista e a ativista —, o instituto mantém um programa robusto de bolsas integrais para jovens talentos da América do Sul e da África.",
   },
   {
     name: "El Grifo Café & Pastelería",
     tag: "Um projeto 100% Tainã",
-    pink: true,
+    tone: "cafe",
     facts: ["Tainã detesta café puro", "O café é a estrela oculta", "Seção intocável de chocolate"],
     text: "A cafeteria mais badalada da cidade — e o detalhe irônico é que Tainã detesta o sabor do café puro. Fascinado pelo café como ingrediente, ele trabalhou lado a lado com chefs e baristas europeus num cardápio de entremets, tortas, frapês e coquetéis, cada um com seu próprio brilho. Para o seu lado formiga, exigiu uma seção exclusiva de chocolate: chocolates quentes densos, brownies e trufas. Sob o brasão do Grifo, é o ponto de encontro dos alunos do Instituto, das reuniões informais de Dashiell e o abastecimento de doces de Tainã nas madrugadas de design.",
   },
