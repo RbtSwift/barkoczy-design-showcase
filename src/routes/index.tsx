@@ -1,6 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import dashiellImg from "@/assets/dashiell.jpg";
-import tainaImg from "@/assets/taina.jpg";
 
 const LINKS = {
   dashiell: "https://www.facebook.com/profile.php?id=61594191305147",
@@ -60,46 +58,84 @@ function Btn({ href, children, dark }: { href: string; children: React.ReactNode
   );
 }
 
-function Portrait({ src, alt, rev }: { src: string; alt: string; rev?: boolean | undefined }) {
+type Fact = { label: string; title: string; items?: string[]; tone: "blue" | "ink" | "light" };
+
+const dashiellFacts: Fact[] = [
+  { label: "Quem ele mais ama", title: "Tainã", items: ["Afilhado e filho adotivo", "Ao lado dele, é carinhoso, brincalhão e vulnerável"], tone: "blue" },
+  { label: "Origem", title: "8 de abril · Espanha", items: ["Inspiração europeia", "Essência refinada"], tone: "ink" },
+  { label: "Paixão", title: "Animais", items: ["Muitos cães e gatos em casa", "Financia ONGs de resgate animal"], tone: "light" },
+  { label: "Papel", title: "Patriarca & Fundador", items: ["Força motriz do Grupo Barkóczy"], tone: "light" },
+  { label: "Personalidade", title: "Marrento, sério, proativo", items: ["Resolve qualquer problema", "Exige qualidade e autenticidade"], tone: "ink" },
+  { label: "Filosofia", title: "Conexões que duram", items: ["Inspirar confiança", "Gerar valor duradouro"], tone: "blue" },
+];
+
+const tainaFacts: Fact[] = [
+  { label: "Quem ele mais ama", title: "Dashiell", items: ["Padrinho e porto seguro", "Compartilha tudo com ele", "Sonho: ser seu maior orgulho"], tone: "blue" },
+  { label: "Raízes", title: "Afro-indígena", items: ["Mãe ativista Baré", "Pai fotojornalista angolano", "Nascido em 4 de setembro"], tone: "ink" },
+  { label: "Estudos", title: "IED Madrid", items: ["Design Gráfico", "Comunicação Digital"], tone: "light" },
+  { label: "Trabalho", title: "Diretor de arte", items: ["Agência Barkóczy", "Sites e identidade visual", "Foto, ilustração, design têxtil"], tone: "light" },
+  { label: "Comida & bebida", title: "Bubble Tea & abacate", tone: "blue" },
+  { label: "Na playlist", title: "Hora de Aventura", items: ["Sou Seu Problema", "Island Song"], tone: "ink" },
+  { label: "Séries & filmes", title: "Animações", items: ["Banana Fish", "O Incrível Mundo de Gumball", "Apenas um Show", "Titio Avô", "Homem-Aranha (Tom Holland)"], tone: "light" },
+  { label: "Games", title: "Modo jogador", items: ["Dead by Daylight", "Roblox", "Jogo de Hora de Aventura"], tone: "ink" },
+  { label: "Marca na alma", title: "Japão", items: ["Viagem inesquecível", "Amor pela cultura pop"], tone: "light" },
+];
+
+const toneCls = {
+  blue: "bg-primary text-primary-foreground",
+  ink: "bg-ink text-ink-foreground",
+  light: "bg-muted text-foreground",
+};
+
+function FactCard({ f, i }: { f: Fact; i: number }) {
+  const shape = i % 3 === 0 ? "rounded-[2rem] rounded-tr-none" : i % 3 === 1 ? "rounded-[2rem] rounded-bl-none" : "rounded-[2rem]";
   return (
-    <div className={`relative ${rev ? "radius-asym-rev" : "radius-asym"} overflow-hidden shadow-2xl`}>
-      <img src={src} alt={alt} width={896} height={1152} loading="lazy" className="duotone h-full w-full object-cover" />
-      <div className="blue-overlay absolute inset-0" />
+    <div className={`${toneCls[f.tone]} ${shape} relative overflow-hidden p-6 transition-transform hover:-translate-y-1`}>
+      <span className="absolute -right-3 -top-6 text-7xl font-black opacity-10">{String(i + 1).padStart(2, "0")}</span>
+      <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-70">{f.label}</p>
+      <p className="mt-2 text-2xl font-black leading-tight">{f.title}</p>
+      {f.items && (
+        <ul className="mt-3 space-y-1 text-sm font-medium opacity-85">
+          {f.items.map((it) => <li key={it}>— {it}</li>)}
+        </ul>
+      )}
     </div>
   );
 }
 
 function Member({
-  name, role, born, text, img, link, linkLabel, rev,
+  name, role, born, text, facts, link, linkLabel, rev,
 }: {
-  name: string; role: string; born: string; text: string[]; img: string; link: string; linkLabel: string; rev?: boolean | undefined;
+  name: string; role: string; born: string; text: string[]; facts: Fact[]; link: string; linkLabel: string; rev?: boolean | undefined;
 }) {
   const [first, last] = name.split(" ");
   return (
-    <article className={`relative grid gap-12 lg:grid-cols-12 lg:gap-16`}>
-      <div className={`lg:col-span-5 ${rev ? "lg:order-2" : ""}`}>
-        <div className="lg:sticky lg:top-10">
-          <div className="relative">
-            <div className={`absolute -inset-4 -z-10 ${rev ? "-rotate-3" : "rotate-3"} radius-asym bg-ink`} />
-            <Portrait src={img} alt={name} rev={rev} />
-            <span className="absolute -bottom-5 left-6 bg-primary px-5 py-2 text-xs font-black uppercase tracking-[0.3em] text-primary-foreground">
-              {role}
-            </span>
-          </div>
+    <article className="relative">
+      <div className={`flex flex-col gap-4 md:flex-row md:items-end md:justify-between ${rev ? "md:flex-row-reverse md:text-right" : ""}`}>
+        <div>
+          <span className="inline-block bg-primary px-4 py-2 text-xs font-black uppercase tracking-[0.3em] text-primary-foreground">{role}</span>
+          <h3 className="mt-4 text-6xl font-black leading-[0.9] tracking-tight text-primary md:text-9xl">
+            {first}
+            <span className="block text-outline">{last}</span>
+          </h3>
         </div>
-      </div>
-      <div className={`lg:col-span-7 ${rev ? "lg:order-1" : ""}`}>
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-muted-foreground">{born}</p>
-        <h3 className="mt-3 text-6xl font-black leading-[0.9] tracking-tight text-primary md:text-8xl">
-          {first}
-          <span className="block text-outline">{last}</span>
-        </h3>
-        <div className="mt-8 h-2 w-24 bg-ink" />
-        <div className="mt-8 space-y-5 text-base leading-relaxed text-foreground/85 md:text-lg">
-          {text.map((p, i) => <p key={i}>{p}</p>)}
+      </div>
+
+      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {facts.map((f, i) => <FactCard key={f.label} f={f} i={i} />)}
+      </div>
+
+      <div className="mt-16 grid gap-10 lg:grid-cols-12">
+        <div className="lg:col-span-3">
+          <p className="text-xs font-black uppercase tracking-[0.4em]">A história</p>
+          <div className="mt-4 h-2 w-24 bg-ink" />
         </div>
-        <div className="mt-10">
-          <Btn href={link}>{linkLabel}</Btn>
+        <div className="space-y-5 text-base leading-relaxed text-foreground/85 md:text-lg lg:col-span-9">
+          {text.map((p, i) => <p key={i}>{p}</p>)}
+          <div className="pt-6">
+            <Btn href={link}>{linkLabel}</Btn>
+          </div>
         </div>
       </div>
     </article>
@@ -154,11 +190,11 @@ function Index() {
           <div className="space-y-40">
             <Member
               name="Dashiell Barkóczy" role="Patriarca" born="8 de abril · Espanha"
-              text={dashiellText} img={dashiellImg} link={LINKS.dashiell} linkLabel="Perfil de Dashiell"
+              text={dashiellText} facts={dashiellFacts} link={LINKS.dashiell} linkLabel="Perfil de Dashiell"
             />
             <Member
               name="Tainã Barkóczy" role="O Herdeiro" born="4 de setembro · Madrid"
-              text={tainaText} img={tainaImg} link={LINKS.taina} linkLabel="Perfil de Tainã" rev
+              text={tainaText} facts={tainaFacts} link={LINKS.taina} linkLabel="Perfil de Tainã" rev
             />
           </div>
         </div>
