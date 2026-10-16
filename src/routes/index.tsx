@@ -42,6 +42,50 @@ const grupoText = [
 
 const empresas = ["Agência Barkóczy", "Escola de Artes", "Teatro", "Editora", "Cafeteria"];
 
+type Causa = { name: string; desc: string; tag?: string | undefined; tone: "primary" | "light" | "outline" };
+
+const causas: Causa[] = [
+  {
+    tag: "Causa principal",
+    name: "Causas LGBTQIA+",
+    desc: "Entidades de defesa de direitos, acolhimento e visibilidade. É a mais pessoal de todas: Tainã, o herdeiro da família, é gay — e ver outros jovens vivendo com orgulho e segurança é o que torna esse apoio inegociável.",
+    tone: "primary",
+  },
+  {
+    tag: "Causa principal",
+    name: "Escolas na Amazônia",
+    desc: "Contribuição estrutural e vital a escolas e projetos educacionais da região. A homenagem silenciosa, poderosa e eterna da família ao sangue afro-indígena de Tainã e ao legado ativista de sua mãe.",
+    tone: "light",
+  },
+  { name: "Combate ao racismo", desc: "Movimentos ativos na linha de frente da igualdade racial.", tone: "outline" },
+  { name: "Hospitais de câncer", desc: "Contribuições estruturais a hospitais de referência no tratamento.", tone: "outline" },
+  { name: "Proteção animal", desc: "ONGs de resgate e proteção, sustentadas pela paixão de Dashiell pelos animais.", tone: "outline" },
+];
+
+function CauseCard({ c }: { c: Causa }) {
+  const base =
+    c.tone === "primary"
+      ? "bg-primary text-primary-foreground"
+      : c.tone === "light"
+        ? "bg-background text-foreground"
+        : "border border-ink-foreground/25 text-ink-foreground/80";
+  const big = Boolean(c.tag);
+  return (
+    <div
+      className={`${base} relative overflow-hidden rounded-[2rem] rounded-tl-none p-6 transition-transform hover:-translate-y-1 ${big ? "md:p-10" : ""}`}
+    >
+      {c.tag && (
+        <span className="inline-block bg-ink px-3 py-1 text-[10px] font-black uppercase tracking-[0.3em] text-ink-foreground">
+          {c.tag}
+        </span>
+      )}
+      <p className={`mt-4 font-black uppercase tracking-tight ${big ? "text-3xl md:text-4xl" : "text-lg"}`}>{c.name}</p>
+      <p className={`mt-3 font-medium leading-relaxed ${big ? "text-base" : "text-sm"}`}>{c.desc}</p>
+    </div>
+  );
+}
+
+
 function Btn({ href, children, dark }: { href: string; children: React.ReactNode; dark?: boolean | undefined }) {
   return (
     <a
@@ -226,9 +270,27 @@ function Index() {
             <div className="grid gap-10 text-base leading-relaxed text-ink-foreground/80 md:grid-cols-2 md:text-lg">
               {grupoText.map((p, i) => <p key={i}>{p}</p>)}
             </div>
+
+            <div className="mt-24">
+              <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+                <h3 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
+                  Para onde vão os <span className="text-primary">20 milhões</span>
+                </h3>
+                <p className="max-w-xs text-xs font-bold uppercase tracking-[0.3em] text-ink-foreground/50">
+                  Mais de 20 milhões de euros por ano em apoio direto
+                </p>
+              </div>
+              <div className="grid gap-4 lg:grid-cols-2">
+                {causas.filter((c) => c.tag).map((c) => <CauseCard key={c.name} c={c} />)}
+              </div>
+              <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                {causas.filter((c) => !c.tag).map((c) => <CauseCard key={c.name} c={c} />)}
+              </div>
+            </div>
+
             <div className="mt-16 flex flex-col items-start gap-8 rounded-3xl bg-primary p-10 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.4em] text-primary-foreground/70">Filantropia anual</p>
+                <p className="text-xs font-bold uppercase tracking-[0.4em] text-primary-foreground/70">Filantropia anual em euros</p>
                 <p className="text-5xl font-black text-primary-foreground md:text-7xl">+20 milhões</p>
               </div>
               <a
