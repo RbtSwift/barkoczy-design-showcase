@@ -104,28 +104,28 @@ function Btn({ href, children, dark }: { href: string; children: React.ReactNode
   );
 }
 
-type Fact = { label: string; title: string; items?: string[]; tone: "blue" | "ink" | "light" };
+type Fact = { label: string; title: string; items?: string[]; tone: "accent" | "ink" | "light" };
 
 const dashiellFacts: Fact[] = [
-  { label: "Quem ele mais ama", title: "Tainã", items: ["Afilhado e filho adotivo", "Ao lado dele, é carinhoso, brincalhão e vulnerável"], tone: "blue" },
+  { label: "Quem ele mais ama", title: "Tainã", items: ["Afilhado e filho adotivo", "Ao lado dele, é carinhoso, brincalhão e vulnerável"], tone: "accent" },
   { label: "Origem", title: "8 de abril · Espanha", items: ["Inspiração europeia", "Essência refinada"], tone: "ink" },
   { label: "Paixão", title: "Animais", items: ["Muitos cães e gatos em casa", "Financia ONGs de resgate animal"], tone: "light" },
   { label: "Papel", title: "Patriarca & Fundador", items: ["Toma todas as decisões do grupo", "Sempre ouve a opinião do afilhado"], tone: "light" },
-  { label: "Decisões do coração", title: "Causas escolhidas por ele", items: ["Escolas na Amazônia: desde a adoção", "LGBTQIA+: desde que Tainã se assumiu"], tone: "blue" },
+  { label: "Decisões do coração", title: "Causas escolhidas por ele", items: ["Escolas na Amazônia: desde a adoção", "LGBTQIA+: desde que Tainã se assumiu"], tone: "accent" },
   { label: "Personalidade", title: "Marrento, sério, proativo", items: ["Resolve qualquer problema", "Exige qualidade e autenticidade"], tone: "ink" },
-  { label: "Filosofia", title: "Conexões que duram", items: ["Inspirar confiança", "Gerar valor duradouro"], tone: "blue" },
+  { label: "Filosofia", title: "Conexões que duram", items: ["Inspirar confiança", "Gerar valor duradouro"], tone: "accent" },
 ];
 
 const tainaFacts: Fact[] = [
-  { label: "Quem ele mais ama", title: "Dashiell", items: ["Padrinho e porto seguro", "Compartilha tudo com ele", "Sonho: ser seu maior orgulho"], tone: "blue" },
+  { label: "Quem ele mais ama", title: "Dashiell", items: ["Padrinho e porto seguro", "Compartilha tudo com ele", "Sonho: ser seu maior orgulho"], tone: "accent" },
   { label: "Raízes", title: "Afro-indígena", items: ["Mãe ativista Baré", "Pai fotojornalista angolano", "Nascido em 4 de setembro"], tone: "ink" },
   { label: "Estudos", title: "IED Madrid", items: ["Design Gráfico", "Comunicação Digital"], tone: "light" },
   { label: "Trabalho", title: "Diretor de arte", items: ["Agência Barkóczy", "Sites e identidade visual", "Foto, ilustração, design têxtil"], tone: "light" },
-  { label: "Comida & bebida", title: "Favoritos", items: ["Bubble Tea", "Abacate", "Poke"], tone: "blue" },
+  { label: "Comida & bebida", title: "Favoritos", items: ["Bubble Tea", "Abacate", "Poke"], tone: "accent" },
   { label: "Na playlist", title: "Hora de Aventura", items: ["Sou Seu Problema", "Island Song"], tone: "ink" },
   { label: "Séries & filmes", title: "Animações", items: ["Banana Fish", "O Incrível Mundo de Gumball", "Apenas um Show", "Titio Avô", "Homem-Aranha (Tom Holland)"], tone: "light" },
   { label: "Games", title: "Modo jogador", items: ["Dead by Daylight", "Roblox", "Jogo de Hora de Aventura"], tone: "ink" },
-  { label: "O dia que mudou tudo", title: "Se assumir gay", items: ["Medo da sociedade, nunca do padrinho", "Recebeu acolhimento imediato", "Inspirou o apoio às causas LGBTQIA+"], tone: "blue" },
+  { label: "O dia que mudou tudo", title: "Se assumir gay", items: ["Medo da sociedade, nunca do padrinho", "Recebeu acolhimento imediato", "Inspirou o apoio às causas LGBTQIA+"], tone: "accent" },
   { label: "Marca na alma", title: "Japão", items: ["Viagem inesquecível", "Amor pela cultura pop"], tone: "light" },
 ];
 
