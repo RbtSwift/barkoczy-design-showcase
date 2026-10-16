@@ -1,6 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import dashiellImg from "@/assets/dashiell.jpg";
-import tainaImg from "@/assets/taina.jpg";
 
 const LINKS = {
   dashiell: "https://www.facebook.com/profile.php?id=61594191305147",
@@ -192,11 +190,11 @@ function Index() {
           <div className="space-y-40">
             <Member
               name="Dashiell Barkóczy" role="Patriarca" born="8 de abril · Espanha"
-              text={dashiellText} img={dashiellImg} link={LINKS.dashiell} linkLabel="Perfil de Dashiell"
+              text={dashiellText} facts={dashiellFacts} link={LINKS.dashiell} linkLabel="Perfil de Dashiell"
             />
             <Member
               name="Tainã Barkóczy" role="O Herdeiro" born="4 de setembro · Madrid"
-              text={tainaText} img={tainaImg} link={LINKS.taina} linkLabel="Perfil de Tainã" rev
+              text={tainaText} facts={tainaFacts} link={LINKS.taina} linkLabel="Perfil de Tainã" rev
             />
           </div>
         </div>
