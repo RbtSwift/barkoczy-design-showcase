@@ -387,6 +387,71 @@ function Curriculo() {
   );
 }
 
+const dashEdu = [
+  { n: "01", tag: "A Tradição", escola: "University of Oxford", local: "Inglaterra", espec: "Economia e Gestão de Patrimônio",
+    desc: "Onde compreendi o verdadeiro peso da palavra \"Legado\". Minha formação em Oxford me deu a base clássica, a disciplina e o entendimento histórico necessários para assumir os negócios de uma dinastia europeia e preservar a honra e a distinção do sobrenome Barkóczy.",
+    cls: "bg-primary text-primary-foreground rounded-tr-none" },
+  { n: "02", tag: "Os Negócios", escola: "IE Business School", local: "Madrid, Espanha", espec: "MBA Executivo em Liderança Global",
+    desc: "Onde afiei a minha visão estratégica. Se em Oxford aprendi a preservar a herança, foi no IE, em Madrid, que me preparei para multiplicar o império, dominar o mercado corporativo e fundar as bases estruturais do que hoje é o imponente Grupo Barkóczy.",
+    cls: "bg-ink text-ink-foreground rounded-bl-none" },
+];
+const dashExps = [
+  { tag: "O Império", empresa: "Grupo Barkóczy", cargo: "Patriarca, Fundador & CEO", local: "Madrid, Espanha",
+    desc: "Líder máximo e guardião do legado da Família Barkóczy. Como empresário, minha rotina passa por gerenciar a expansão internacional dos nossos empreendimentos, fechar contratos milionários e garantir que a excelência seja a nossa única assinatura. Construí e protejo essa herança não apenas para acumular poder, mas para garantir um futuro inabalável para o meu maior orgulho e sucessor: meu afilhado, Tainã. No Grupo Barkóczy, a honra não se negocia; ela é a nossa fundação.",
+    cls: "bg-ink text-ink-foreground rounded-tl-none" },
+  { tag: "O Refúgio", empresa: "Fazenda Barkóczy", cargo: "Proprietário & Gestor", local: "Interior da Espanha",
+    desc: "O lugar onde a minha armadura de empresário cai por terra. Sou eu quem gerencia as nossas terras, os cavalos, o gado e todos os animais que criamos com o maior respeito. Quando não estou de terno e gravata liderando o império, estou de botas na terra, cuidando dos nossos porcos, bodes e galinhas. É esse contato diário com a vida no campo que me mantém são e com os pés firmemente fincados na terra.",
+    cls: "bg-cafe text-cafe-foreground rounded-br-none" },
+];
+
+function DashCurriculo() {
+  return (
+    <div>
+      <div className="mb-12">
+        <p className="text-xs font-black uppercase tracking-[0.4em] text-primary">O currículo do patriarca</p>
+        <h3 className="mt-3 text-4xl font-black uppercase tracking-tight md:text-6xl">
+          Formação & <span className="text-primary">Carreira</span>
+        </h3>
+      </div>
+      <div className="grid gap-4 lg:grid-cols-2">
+        {dashEdu.map((e) => (
+          <div key={e.escola} className={`relative overflow-hidden rounded-[2rem] p-8 transition-transform hover:-translate-y-1 md:p-10 ${e.cls}`}>
+            <span className="pointer-events-none absolute -right-3 -top-6 text-7xl font-black opacity-10">{e.n}</span>
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-70">Educação · {e.tag} · {e.local}</p>
+            <p className="mt-2 text-3xl font-black leading-tight">{e.escola}</p>
+            <p className="mt-1 text-lg font-black opacity-90">{e.espec}</p>
+            <blockquote className="mt-6 border-l-4 border-current/30 pl-4 text-sm italic leading-relaxed opacity-90">“{e.desc}”</blockquote>
+          </div>
+        ))}
+      </div>
+      <div className="mt-12">
+        <h4 className="mb-6 text-2xl font-black uppercase tracking-tight md:text-4xl">
+          Experiências <span className="text-primary">·</span> <span className="text-muted-foreground">terno e botas</span>
+        </h4>
+        <div className="grid gap-4 lg:grid-cols-2">
+          {dashExps.map((e) => (
+            <div key={e.empresa} className={`relative overflow-hidden rounded-[2rem] p-8 transition-transform hover:-translate-y-1 md:p-10 ${e.cls}`}>
+              <span className="inline-block rounded-full bg-primary px-4 py-2 text-[10px] font-black uppercase tracking-[0.3em] text-primary-foreground">
+                {e.tag} · Trabalha aqui atualmente
+              </span>
+              <p className="mt-4 text-2xl font-black uppercase tracking-tight md:text-3xl">{e.empresa}</p>
+              <p className="mt-1 text-base font-black">{e.cargo}</p>
+              <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] opacity-70">{e.local}</p>
+              <blockquote className="mt-5 border-l-4 border-current/30 pl-4 text-sm italic leading-relaxed opacity-90">“{e.desc}”</blockquote>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-4 rounded-[2rem] bg-muted p-8 md:p-10">
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">Sobre mim · nas palavras dele</p>
+        <p className="mt-4 text-xl font-black leading-snug md:text-2xl">
+          “O meu maior tesouro, a minha maior aventura e o meu legado mais valioso tem um nome: <span className="text-pink">Tainã</span>. O meu lugar favorito no mundo será sempre onde ele estiver.”
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function Member({
   name, role, born, text, facts, link, linkLabel, rev, accent = "blue",
 }: {
@@ -479,6 +544,7 @@ function Index() {
               name="Dashiell Barkóczy" role="Patriarca" born="8 de abril · Espanha"
               text={dashiellText} facts={dashiellFacts} link={LINKS.dashiell} linkLabel="Perfil de Dashiell"
             />
+            <DashCurriculo />
             <div className="flex items-center gap-10 md:gap-24">
               <span className="h-px flex-1 bg-ink/10" />
               <img src={wordmark.url} alt="Barkóczy" className="w-64 md:w-80" />
