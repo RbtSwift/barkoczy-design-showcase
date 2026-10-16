@@ -57,12 +57,14 @@ const negocios: Negocio[] = [
   {
     name: "Agência Barkóczy",
     tag: "A pedra fundamental",
+    tone: "primary",
     facts: ["Fundada por Dashiell", "Direção de arte: Tainã", "O coração pulsante de Madrid"],
     text: "Começou como um núcleo de excelência em comunicação e rapidamente se tornou o epicentro social de toda a comunidade — o espaço onde laços são formados, projetos nascem e a vida cotidiana acontece em sua forma mais autêntica. Dashiell ergueu as pilastras inabaláveis do negócio com sua visão de liderança; Tainã, ao assumir a direção de arte, injetou sangue novo, modernidade e uma estética visual incomparável, consolidando a marca como o coração pulsante de Madrid e da comunidade virtual.",
   },
   {
     name: "Teatro Real Barkóczy",
     tag: "Símbolo máximo de status",
+    tone: "teatro",
     facts: ["Edifício histórico restaurado", "Óperas, peças e exposições", "Veludo carmesim e ouro"],
     text: "Nascido da paixão de Dashiell pela arquitetura clássica e pela alta cultura espanhola e europeia. Ele adquiriu um edifício histórico no coração de Madrid e o restaurou de forma impecável, transformando-o no palco mais prestigiado da Espanha — onde a elite cultural se encontra sob o olhar vigilante e o patrocínio generoso dos Barkóczy.",
   },
