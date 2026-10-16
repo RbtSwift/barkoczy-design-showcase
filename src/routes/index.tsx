@@ -116,6 +116,16 @@ const causas: Causa[] = [
   { name: "Proteção animal", desc: "ONGs de resgate e proteção, sustentadas pela paixão de Dashiell pelos animais.", tone: "outline" },
 ];
 
+type Revista = { name: string; tag: string; quote: string };
+const revistas: Revista[] = [
+  { name: "Vogage", tag: "Capa", quote: "A dinastia que veste o futuro da alta sociedade europeia." },
+  { name: "Fortuna", tag: "Prêmio · Império do Ano", quote: "Eleito pela terceira vez o grupo que melhor une riqueza e propósito." },
+  { name: "¡Olá, Madrid!", tag: "Entrevista exclusiva", quote: "Dashiell e Tainã: o afeto que move um império, como nunca antes contado." },
+  { name: "Vanité Fair", tag: "Perfil do ano", quote: "Honra, tradição, distinção — os segredos da casa mais discreta da Europa." },
+  { name: "Le Théâtre", tag: "Premiação", quote: "O Teatro Real Barkóczy eleito o palco mais cobiçado do continente." },
+  { name: "Ella Noblesse", tag: "Matéria especial", quote: "A nova geração Barkóczy transforma arte em legado." },
+];
+
 function CauseCard({ c }: { c: Causa }) {
   const base =
     c.tone === "gold"
@@ -267,7 +277,7 @@ function Index() {
         <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full border-[2.5rem] border-primary" />
         <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-8">
           <div className="flex items-center gap-3">
-            <img src={escudo.url} alt="Brasão da Família Barkóczy" className="h-9 w-9" />
+            <img src={escudo.url} alt="Brasão da Família Barkóczy" className="h-10 w-auto" />
             <span className="text-xs font-black uppercase tracking-[0.35em]">Barkóczy</span>
           </div>
           <div className="hidden gap-8 text-xs font-bold uppercase tracking-[0.3em] md:flex">
