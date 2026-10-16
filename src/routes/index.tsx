@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import brasao from "@/assets/brasao.png.asset.json";
 import brasaoBranco from "@/assets/brasao-branco.png.asset.json";
-import brasaoLuz from "@/assets/brasao-luz.png.asset.json";
+import brasaoOuro from "@/assets/brasao-ouro.png.asset.json";
 import escudo from "@/assets/escudo.png.asset.json";
+import wordmark from "@/assets/wordmark.png.asset.json";
 import wordmarkLuz from "@/assets/wordmark-luz.png.asset.json";
 
 const LINKS = {
@@ -97,14 +97,14 @@ const negocios: Negocio[] = [
   },
 ];
 
-type Causa = { name: string; desc: string; tag?: string | undefined; tone: "primary" | "light" | "outline" };
+type Causa = { name: string; desc: string; tag?: string | undefined; tone: "gold" | "light" | "outline" };
 
 const causas: Causa[] = [
   {
     tag: "Decisão 100% Dashiell",
     name: "Causas LGBTQIA+",
     desc: "Começou no dia em que Tainã se assumiu gay. Ao perceber que o medo do afilhado vinha de uma sociedade cheia de preconceitos, Dashiell pensou em todas as pessoas LGBTQIA+ sem alguém para acolhê-las — e decidiu apoiar a causa por ele, para que o filho viva em um mundo livre de preconceitos.",
-    tone: "primary",
+    tone: "gold",
   },
   {
     tag: "Decisão 100% Dashiell",
@@ -119,8 +119,8 @@ const causas: Causa[] = [
 
 function CauseCard({ c }: { c: Causa }) {
   const base =
-    c.tone === "primary"
-      ? "bg-primary text-primary-foreground"
+    c.tone === "gold"
+      ? "bg-gold text-gold-foreground"
       : c.tone === "light"
         ? "bg-background text-foreground"
         : "border border-ink-foreground/25 text-ink-foreground/80";
@@ -274,7 +274,6 @@ function Index() {
 
         <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-8">
           <div className="flex items-center gap-3">
-            <img src={escudo.url} alt="Brasão da Família Barkóczy" className="h-10 w-auto" />
             <span className="text-xs font-black uppercase tracking-[0.35em]">Barkóczy</span>
           </div>
           <div className="hidden gap-8 text-xs font-bold uppercase tracking-[0.3em] md:flex">
@@ -316,7 +315,7 @@ function Index() {
             />
             <div className="flex items-center gap-10 md:gap-24">
               <span className="h-px flex-1 bg-ink/10" />
-              <img src={brasao.url} alt="Brasão da Família Barkóczy" className="w-40 md:w-56" />
+              <img src={wordmark.url} alt="Barkóczy" className="w-64 md:w-80" />
               <span className="h-px flex-1 bg-ink/10" />
             </div>
             <Member
@@ -330,19 +329,19 @@ function Index() {
       {/* GRUPO */}
       <section id="grupo" className="relative">
         <div className="clip-diag-rev bg-ink pb-32 pt-[20rem] text-ink-foreground">
-          <div className="pointer-events-none absolute right-0 top-[52rem] h-[28rem] w-[28rem] translate-x-1/3 rounded-full border-[3rem] border-primary" />
+          <div className="pointer-events-none absolute right-0 top-[52rem] h-[28rem] w-[28rem] translate-x-1/3 rounded-full border-[3rem] border-gold" />
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="mb-24 flex flex-col items-center text-center">
               <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-ink-foreground/70">
                 Honra · Tradição · Distinção · Orgulho
               </p>
-              <img src={brasaoLuz.url} alt="Brasão da Família Barkóczy" className="mt-10 w-64 md:w-96" />
-              <span className="mt-10 h-1 w-28 bg-primary" />
+              <img src={brasaoOuro.url} alt="Brasão da Família Barkóczy" className="mt-10 w-64 md:w-96" />
+              <span className="mt-10 h-1 w-28 bg-gold" />
             </div>
             <div className="mb-16 flex items-end gap-6">
-              <span className="text-8xl font-black leading-none text-primary md:text-[10rem]">02</span>
+              <span className="text-8xl font-black leading-none text-gold md:text-[10rem]">02</span>
               <h2 className="pb-4 text-4xl font-black uppercase tracking-tight md:text-6xl">
-                O Grupo <span className="text-primary">Barkóczy</span>
+                O Grupo <span className="text-gold">Barkóczy</span>
               </h2>
             </div>
             <div className="mb-16 flex flex-wrap gap-3">
@@ -363,7 +362,7 @@ function Index() {
 
             <div className="mt-24">
               <h3 className="mb-10 text-3xl font-black uppercase tracking-tight md:text-5xl">
-                Os <span className="text-primary">empreendimentos</span>
+                Os <span className="text-gold">empreendimentos</span>
               </h3>
               <div className="grid gap-4 lg:grid-cols-2">
                 {negocios.map((n, i) => (
@@ -398,13 +397,13 @@ function Index() {
             <div className="mt-24">
               <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
                 <h3 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-                  Para onde vão os <span className="text-primary">20 milhões</span>
+                  Para onde vão os <span className="text-gold">20 milhões</span>
                 </h3>
                 <p className="max-w-xs text-xs font-bold uppercase tracking-[0.3em] text-ink-foreground/50">
                   Mais de 20 milhões de euros por ano em apoio direto
                 </p>
               </div>
-              <blockquote className="mb-10 border-l-4 border-primary pl-6 text-xl font-bold leading-snug md:text-2xl">
+              <blockquote className="mb-10 border-l-4 border-gold pl-6 text-xl font-bold leading-snug md:text-2xl">
                 “Todas as decisões são do Dashiell — e ele sempre ouve o afilhado. As duas causas principais nasceram do amor por Tainã.”
               </blockquote>
               <div className="grid gap-4 lg:grid-cols-2">
@@ -415,10 +414,10 @@ function Index() {
               </div>
             </div>
 
-            <div className="mt-16 flex flex-col items-start gap-8 rounded-3xl bg-primary p-10 md:flex-row md:items-center md:justify-between">
+            <div className="mt-16 flex flex-col items-start gap-8 rounded-3xl bg-gold p-10 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.4em] text-primary-foreground/70">Filantropia anual em euros</p>
-                <p className="text-5xl font-black text-primary-foreground md:text-7xl">+20 milhões</p>
+                <p className="text-xs font-bold uppercase tracking-[0.4em] text-gold-foreground/70">Filantropia anual em euros</p>
+                <p className="text-5xl font-black text-gold-foreground md:text-7xl">+20 milhões</p>
               </div>
               <a
                 href={LINKS.agencia} target="_blank" rel="noopener noreferrer"
