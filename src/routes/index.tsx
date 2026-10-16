@@ -343,9 +343,9 @@ function Index() {
                 {negocios.map((n, i) => (
                   <article
                     key={n.name}
-                    className={`relative overflow-hidden rounded-3xl p-8 md:p-10 ${
-                      i === 0 ? "bg-primary text-primary-foreground lg:col-span-2" : n.pink ? "bg-pink text-pink-foreground" : "border border-ink-foreground/20"
-                    }`}
+                    className={`relative overflow-hidden rounded-3xl p-8 transition-transform hover:-translate-y-1 md:p-10 ${
+                      negocioCls[n.tone]
+                    } ${n.tone === "primary" ? "lg:col-span-2" : ""}`}
                   >
                     <span className="pointer-events-none absolute -right-2 -top-6 text-[8rem] font-black leading-none opacity-15">0{i + 1}</span>
                     <p className="text-xs font-bold uppercase tracking-[0.3em] opacity-70">{n.tag}</p>
