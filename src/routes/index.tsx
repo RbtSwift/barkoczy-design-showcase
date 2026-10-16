@@ -44,7 +44,15 @@ const grupoText = [
 
 const empresas = ["Agência Barkóczy", "Teatro Real", "Editorial", "Instituto de Artes", "El Grifo Café"];
 
-type Negocio = { name: string; tag: string; facts: string[]; text: string; pink?: boolean | undefined };
+type NegocioTone = "primary" | "teatro" | "editorial" | "instituto" | "cafe";
+const negocioCls: Record<NegocioTone, string> = {
+  primary: "bg-primary text-primary-foreground",
+  teatro: "bg-teatro text-teatro-foreground",
+  editorial: "bg-editorial text-editorial-foreground",
+  instituto: "bg-instituto text-instituto-foreground",
+  cafe: "bg-cafe text-cafe-foreground",
+};
+type Negocio = { name: string; tag: string; facts: string[]; text: string; tone: NegocioTone };
 const negocios: Negocio[] = [
   {
     name: "Agência Barkóczy",
