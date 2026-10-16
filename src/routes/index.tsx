@@ -74,7 +74,7 @@ const tainaFacts: Fact[] = [
   { label: "Raízes", title: "Afro-indígena", items: ["Mãe ativista Baré", "Pai fotojornalista angolano", "Nascido em 4 de setembro"], tone: "ink" },
   { label: "Estudos", title: "IED Madrid", items: ["Design Gráfico", "Comunicação Digital"], tone: "light" },
   { label: "Trabalho", title: "Diretor de arte", items: ["Agência Barkóczy", "Sites e identidade visual", "Foto, ilustração, design têxtil"], tone: "light" },
-  { label: "Comida & bebida", title: "Bubble Tea & abacate", tone: "blue" },
+  { label: "Comida & bebida", title: "Favoritos", items: ["Bubble Tea", "Abacate", "Poke"], tone: "blue" },
   { label: "Na playlist", title: "Hora de Aventura", items: ["Sou Seu Problema", "Island Song"], tone: "ink" },
   { label: "Séries & filmes", title: "Animações", items: ["Banana Fish", "O Incrível Mundo de Gumball", "Apenas um Show", "Titio Avô", "Homem-Aranha (Tom Holland)"], tone: "light" },
   { label: "Games", title: "Modo jogador", items: ["Dead by Daylight", "Roblox", "Jogo de Hora de Aventura"], tone: "ink" },
