@@ -395,6 +395,13 @@ function Curriculo() {
           ))}
         </div>
       </div>
+
+      <div className="mt-4 rounded-[2rem] bg-muted p-8 md:p-10">
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">Sobre mim · nas palavras dele</p>
+        <p className="mt-4 text-xl font-black leading-snug md:text-2xl">
+          "Herdei um sobrenome, um império e um nome que pesa mais que ouro, mas o meu maior patrimônio sempre vai ter nome e sobrenome: <span className="text-primary">Dashiell Barkóczy</span>. Eu trocaria todos os palácios do mundo por um fim de tarde no colo do meu padrinho. Se eu nascesse de novo, ainda ia pedir pra ele me adotar."
+        </p>
+      </div>
     </div>
   );
 }
