@@ -291,11 +291,21 @@ const tainaExps = [
       "O meu projeto de paixão dentro do império da família. Idealizei o El Grifo com a missão de criar o ponto de encontro perfeito para mentes criativas (e estudantes do Instituto Barkóczy). Apesar de ironicamente detestar café puro, trabalhei lado a lado com os melhores chefs europeus para desenvolver um menu onde o café brilha como ingrediente em doces e bebidas únicas. E, claro, exigi uma seção sagrada no menu dedicada exclusivamente ao chocolate. É o meu refúgio e o nosso ponto de encontro oficial.",
     tone: "cafe" as const,
   },
+  {
+    badge: "A vanguarda digital",
+    empresa: "B-Web Barkóczy",
+    cargo: "Fundador e Diretor",
+    local: "Madrid, Espanha",
+    descricao:
+      "A minha subsidiária de inovação, tecnologia e design de alto padrão — o ateliê de arquitetura digital do Grupo Barkóczy. Não criamos páginas na internet: construímos mundos, territórios e plataformas exclusivas que traduzem a verdadeira essência de famílias, irmandades, tropas, comandos e corporações. A exclusividade aqui é inegociável — rejeitamos moldes e templates repetidos. Cada linha de código, paleta de cores e funcionalidade passa pela minha curadoria pessoal e nasce do absoluto zero, do rascunho inicial à entrega da chave do novo domínio.",
+    tone: "bweb" as const,
+  },
 ];
 
 const expCls = {
   primary: "bg-primary text-primary-foreground",
   cafe: "bg-cafe text-cafe-foreground",
+  bweb: "bg-bweb text-bweb-foreground",
 };
 
 function Curriculo() {
