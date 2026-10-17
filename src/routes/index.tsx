@@ -96,6 +96,13 @@ const negocios: Negocio[] = [
     facts: ["Tainã detesta café puro", "O café é a estrela oculta", "Seção intocável de chocolate"],
     text: "A cafeteria mais badalada da cidade — e o detalhe irônico é que Tainã detesta o sabor do café puro. Fascinado pelo café como ingrediente, ele trabalhou lado a lado com chefs e baristas europeus num cardápio de entremets, tortas, frapês e coquetéis, cada um com seu próprio brilho. Para o seu lado formiga, exigiu uma seção exclusiva de chocolate: chocolates quentes densos, brownies e trufas. Sob o brasão do Grifo, é o ponto de encontro dos alunos do Instituto, das reuniões informais de Dashiell e o abastecimento de doces de Tainã nas madrugadas de design.",
   },
+  {
+    name: "B-Web Barkóczy",
+    tag: "A vanguarda digital",
+    tone: "bweb",
+    facts: ["Fundada e dirigida por Tainã", "Arquitetura digital sob medida", "Do rascunho à chave do domínio"],
+    text: "A subsidiária de inovação, tecnologia e design de alto padrão do grupo — idealizada, fundada e dirigida integralmente pelo Sócio-Herdeiro e Diretor de Arte Tainã. Mais do que criar páginas na internet, a B-Web constrói mundos, territórios e plataformas exclusivas que traduzem a verdadeira essência de famílias, irmandades, tropas, comandos e corporações. Aqui, a exclusividade é inegociável: nada de moldes ou templates repetidos. Cada linha de código, paleta de cores e funcionalidade passa pela curadoria pessoal de Tainã e nasce do absoluto zero, com consultoria criativa completa do rascunho inicial até a entrega da chave do novo domínio.",
+  },
 ];
 
 type Causa = { name: string; desc: string; tag?: string | undefined; tone: "gold" | "light" | "outline" };
