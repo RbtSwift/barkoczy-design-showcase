@@ -43,20 +43,21 @@ const tainaText = [
 
 const grupoText = [
   "O Grupo Barkóczy ergue-se não apenas como um império de comunicação e negócios, mas como um verdadeiro símbolo de inovação, fomento cultural e responsabilidade social. Com raízes na elegância europeia e uma visão moderna de mercado, o conglomerado é formado por uma diversidade de empreendimentos estratégicos que carregam a marca absoluta da excelência. A joia da coroa é, sem dúvida, a prestigiada Agência Barkóczy, que se consolidou como o epicentro social e criativo da comunidade, ditando tendências, conectando projetos e moldando a forma como as pessoas interagem.",
-  "Todas as decisões da empresa são tomadas por Dashiell, que sempre considera a opinião do afilhado antes de bater o martelo. No entanto, o alcance do grupo vai muito além do universo digital, ramificando-se em espaços físicos e culturais de imenso renome em toda a Europa. Sob a liderança implacável do patriarca Dashiell e impulsionado pelo olhar artístico de seu herdeiro Tainã, o grupo expandiu seu legado fundando uma prestigiada escola de artes, que atrai e lapida talentos de todo o continente, e um imponente teatro de arquitetura clássica, palco das produções e exposições mais aclamadas da atualidade. A paixão pela narrativa e pelo conhecimento deu origem a uma sofisticada editora de livros, responsável por publicações de altíssimo padrão que circulam pelo mundo. Completando o portfólio, o grupo possui uma renomada e badalada cafeteria, que serve como ponto de encontro para mentes criativas na Europa — e que, certamente, possui no menu o Bubble Tea perfeito para acompanhar as exigentes rotinas de criação do jovem diretor de arte da família. Cada um desses empreendimentos respira a identidade Barkóczy, unindo tradição, qualidade e um desejo permanente de superar expectativas.",
+  "Todas as decisões da empresa são tomadas por Dashiell, que sempre considera a opinião do afilhado antes de bater o martelo. No entanto, o alcance do grupo vai muito além do universo digital, ramificando-se em espaços físicos e culturais de imenso renome em toda a Europa. Sob a liderança implacável do patriarca Dashiell e impulsionado pelo olhar artístico de seu herdeiro Tainã, o grupo expandiu seu legado fundando uma prestigiada escola de artes, que atrai e lapida talentos de todo o continente, e um imponente teatro de arquitetura clássica, palco das produções e exposições mais aclamadas da atualidade. A paixão pela narrativa e pelo conhecimento deu origem a uma sofisticada editora de livros, responsável por publicações de altíssimo padrão que circulam pelo mundo. Completando o portfólio, o grupo possui uma renomada e badalada cafeteria, que serve como ponto de encontro para mentes criativas na Europa — e que, certamente, possui no menu o Bubble Tea perfeito para acompanhar as exigentes rotinas de criação do jovem diretor de arte da família. E, à frente da era digital do império, está a B-Web Barkóczy: o ateliê de arquitetura digital fundado e dirigido integralmente por Tainã, que une o peso e a tradição da dinastia às infinitas possibilidades criativas do mundo virtual. Cada um desses empreendimentos respira a identidade Barkóczy, unindo tradição, qualidade e um desejo permanente de superar expectativas.",
   "Entretanto, o verdadeiro peso dessa dinastia não é medido apenas por seu sucesso comercial ou por sua influência cultural, mas pelo profundo impacto humano que promove. Movidos pela convicção de que o privilégio e o alcance global devem atuar como instrumentos reais de transformação, o Grupo Barkóczy destina anualmente mais de 20 milhões a causas filantrópicas — e as duas principais beneficiadas foram escolhidas 100% por Dashiell, por amor a Tainã. Essas doações generosas não são meros repasses financeiros, mas escolhas direcionadas que refletem a alma e os valores inegociáveis de seus líderes. O compromisso inabalável com a justiça social e a igualdade traduz-se no apoio contínuo a entidades de causas LGBTQIA+ e a movimentos ativos de combate ao racismo, além de contribuições estruturais e vitais a hospitais de referência no tratamento do câncer.",
   "Cada frente de apoio caritativo carrega uma assinatura pessoal e emocional da família. O amor imensurável de Dashiell pelos animais — visível nos cães e gatos que enchem sua casa de vida — reflete-se diretamente no financiamento robusto de diversas ONGs dedicadas ao resgate e proteção animal. De forma igualmente emocionante, o grupo atua como um pilar financeiro inabalável para escolas e projetos educacionais na Amazônia. Esta é uma homenagem silenciosa, poderosa e eterna que honra o sangue afro-indígena de Tainã e perpetua o legado ativista de sua mãe. Dessa forma, o Grupo Barkóczy transcende o conceito de corporação, provando que a verdadeira elegância de sua história não reside apenas na fortuna ou no status que acumula, mas no mundo mais justo, belo e acolhedor que ajuda a construir.",
 ];
 
-const empresas = ["Agência Barkóczy", "Teatro Real", "Editorial", "Instituto de Artes", "El Grifo Café"];
+const empresas = ["Agência Barkóczy", "Teatro Real", "Editorial", "Instituto de Artes", "El Grifo Café", "B-Web"];
 
-type NegocioTone = "primary" | "teatro" | "editorial" | "instituto" | "cafe";
+type NegocioTone = "primary" | "teatro" | "editorial" | "instituto" | "cafe" | "bweb";
 const negocioCls: Record<NegocioTone, string> = {
   primary: "bg-primary text-primary-foreground",
   teatro: "bg-teatro text-teatro-foreground",
   editorial: "bg-editorial text-editorial-foreground",
   instituto: "bg-instituto text-instituto-foreground",
   cafe: "bg-cafe text-cafe-foreground",
+  bweb: "bg-bweb text-bweb-foreground",
 };
 type Negocio = { name: string; tag: string; facts: string[]; text: string; tone: NegocioTone };
 const negocios: Negocio[] = [
@@ -94,6 +95,13 @@ const negocios: Negocio[] = [
     tone: "cafe",
     facts: ["Tainã detesta café puro", "O café é a estrela oculta", "Seção intocável de chocolate"],
     text: "A cafeteria mais badalada da cidade — e o detalhe irônico é que Tainã detesta o sabor do café puro. Fascinado pelo café como ingrediente, ele trabalhou lado a lado com chefs e baristas europeus num cardápio de entremets, tortas, frapês e coquetéis, cada um com seu próprio brilho. Para o seu lado formiga, exigiu uma seção exclusiva de chocolate: chocolates quentes densos, brownies e trufas. Sob o brasão do Grifo, é o ponto de encontro dos alunos do Instituto, das reuniões informais de Dashiell e o abastecimento de doces de Tainã nas madrugadas de design.",
+  },
+  {
+    name: "B-Web Barkóczy",
+    tag: "A vanguarda digital",
+    tone: "bweb",
+    facts: ["Fundada e dirigida por Tainã", "Arquitetura digital sob medida", "Do rascunho à chave do domínio"],
+    text: "A subsidiária de inovação, tecnologia e design de alto padrão do grupo — idealizada, fundada e dirigida integralmente pelo Sócio-Herdeiro e Diretor de Arte Tainã. Mais do que criar páginas na internet, a B-Web constrói mundos, territórios e plataformas exclusivas que traduzem a verdadeira essência de famílias, irmandades, tropas, comandos e corporações. Aqui, a exclusividade é inegociável: nada de moldes ou templates repetidos. Cada linha de código, paleta de cores e funcionalidade passa pela curadoria pessoal de Tainã e nasce do absoluto zero, com consultoria criativa completa do rascunho inicial até a entrega da chave do novo domínio.",
   },
 ];
 
@@ -283,11 +291,21 @@ const tainaExps = [
       "O meu projeto de paixão dentro do império da família. Idealizei o El Grifo com a missão de criar o ponto de encontro perfeito para mentes criativas (e estudantes do Instituto Barkóczy). Apesar de ironicamente detestar café puro, trabalhei lado a lado com os melhores chefs europeus para desenvolver um menu onde o café brilha como ingrediente em doces e bebidas únicas. E, claro, exigi uma seção sagrada no menu dedicada exclusivamente ao chocolate. É o meu refúgio e o nosso ponto de encontro oficial.",
     tone: "cafe" as const,
   },
+  {
+    badge: "A vanguarda digital",
+    empresa: "B-Web Barkóczy",
+    cargo: "Fundador e Diretor",
+    local: "Madrid, Espanha",
+    descricao:
+      "A minha subsidiária de inovação, tecnologia e design de alto padrão — o ateliê de arquitetura digital do Grupo Barkóczy. Não criamos páginas na internet: construímos mundos, territórios e plataformas exclusivas que traduzem a verdadeira essência de famílias, irmandades, tropas, comandos e corporações. A exclusividade aqui é inegociável — rejeitamos moldes e templates repetidos. Cada linha de código, paleta de cores e funcionalidade passa pela minha curadoria pessoal e nasce do absoluto zero, do rascunho inicial à entrega da chave do novo domínio.",
+    tone: "bweb" as const,
+  },
 ];
 
 const expCls = {
   primary: "bg-primary text-primary-foreground",
   cafe: "bg-cafe text-cafe-foreground",
+  bweb: "bg-bweb text-bweb-foreground",
 };
 
 function Curriculo() {
