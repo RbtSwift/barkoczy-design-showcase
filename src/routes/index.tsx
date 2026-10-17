@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 
 const LINKS = {
   dashiell: "https://www.facebook.com/profile.php?id=61594191305147",
-  taina: "https://www.facebook.com/HerdeiroLeclerc/",
-  agencia: "https://www.facebook.com/groups/agenciaclubesecreto2",
+  taina: "https://www.facebook.com/profile.php?id=61595545734495",
+  agencia: "https://www.facebook.com/groups/agenciabarkoczy",
 };
 
 export const Route = createFileRoute("/")({
@@ -169,7 +169,7 @@ function Btn({
       target="_blank"
       rel="noopener noreferrer"
       className={`group inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-extrabold uppercase tracking-widest transition-all hover:-translate-y-0.5 ${
-        dark ? "bg-ink text-ink-foreground hover:bg-primary" : `\${accents[accent].solid} hover:bg-ink`
+        dark ? "bg-ink text-ink-foreground hover:bg-primary" : `${accents[accent].solid} hover:bg-ink`
       }`}
     >
       {children}
@@ -706,8 +706,8 @@ function Index() {
           <p className="text-sm">Família Barkóczy © 2026. Todos os direitos reservados.</p>
           <div className="flex flex-wrap gap-6 text-xs font-bold uppercase tracking-widest">
             <a href={LINKS.dashiell} target="_blank" rel="noopener noreferrer" className="hover:text-primary">Dashiell</a>
-            <a href={LINKS.taina} target="_blank" rel="noopener noreferrer" className="hover:text-primary">Tainã</a>
-            <a href={LINKS.agencia} target="_blank" rel="noopener noreferrer" className="hover:text-primary">Agência</a>
+            <a href={LINKS.taina} target="_blank" rel="noopener noreferrer" className="hover:text-pink">Tainã</a>
+            <a href={LINKS.agencia} target="_blank" rel="noopener noreferrer" className="hover:text-gold">Agência</a>
           </div>
         </div>
       </footer>
