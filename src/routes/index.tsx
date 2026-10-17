@@ -48,15 +48,16 @@ const grupoText = [
   "Cada frente de apoio caritativo carrega uma assinatura pessoal e emocional da família. O amor imensurável de Dashiell pelos animais — visível nos cães e gatos que enchem sua casa de vida — reflete-se diretamente no financiamento robusto de diversas ONGs dedicadas ao resgate e proteção animal. De forma igualmente emocionante, o grupo atua como um pilar financeiro inabalável para escolas e projetos educacionais na Amazônia. Esta é uma homenagem silenciosa, poderosa e eterna que honra o sangue afro-indígena de Tainã e perpetua o legado ativista de sua mãe. Dessa forma, o Grupo Barkóczy transcende o conceito de corporação, provando que a verdadeira elegância de sua história não reside apenas na fortuna ou no status que acumula, mas no mundo mais justo, belo e acolhedor que ajuda a construir.",
 ];
 
-const empresas = ["Agência Barkóczy", "Teatro Real", "Editorial", "Instituto de Artes", "El Grifo Café"];
+const empresas = ["Agência Barkóczy", "Teatro Real", "Editorial", "Instituto de Artes", "El Grifo Café", "B-Web"];
 
-type NegocioTone = "primary" | "teatro" | "editorial" | "instituto" | "cafe";
+type NegocioTone = "primary" | "teatro" | "editorial" | "instituto" | "cafe" | "bweb";
 const negocioCls: Record<NegocioTone, string> = {
   primary: "bg-primary text-primary-foreground",
   teatro: "bg-teatro text-teatro-foreground",
   editorial: "bg-editorial text-editorial-foreground",
   instituto: "bg-instituto text-instituto-foreground",
   cafe: "bg-cafe text-cafe-foreground",
+  bweb: "bg-bweb text-bweb-foreground",
 };
 type Negocio = { name: string; tag: string; facts: string[]; text: string; tone: NegocioTone };
 const negocios: Negocio[] = [
