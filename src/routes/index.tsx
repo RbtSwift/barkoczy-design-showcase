@@ -188,7 +188,7 @@ const accents: Record<Accent, { solid: string; text: string }> = {
 type Fact = { label: string; title: string; items?: string[]; tone: "accent" | "ink" | "light" };
 
 const dashiellFacts: Fact[] = [
-  { label: "Quem ele mais ama", title: "Tainã", items: ["Seu filho biológico", "Ao lado dele, é carinhoso, brincalhão e vulnerável"], tone: "accent" },
+  { label: "Quem ele mais ama", title: "Tainã", items: ["Seu filho biológico", "Primogênito e filho único", "Ao lado dele, é carinhoso, brincalhão e vulnerável"], tone: "accent" },
   { label: "Carinho", title: "Mimo sem limite", items: ["Enche o filho de carinho", "Realiza suas vontades sem pensar duas vezes", "Quanto mais mimo, mais manhoso — e ele adora"], tone: "accent" },
   { label: "Coração de pai", title: "Ainda uma criança", items: ["Vê Tainã como um menino que precisa ser protegido do mundo", "Um garoto que ele quer proteger pro resto da vida"], tone: "ink" },
 
