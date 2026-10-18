@@ -400,7 +400,7 @@ function Curriculo() {
       <div className="mt-4 rounded-[2rem] bg-muted p-8 md:p-10">
         <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">Sobre mim · nas palavras dele</p>
         <p className="mt-4 text-xl font-black leading-snug md:text-2xl">
-          "O meu lugar seguro no mundo tem nome e sobrenome: <span className="text-primary">Dashiell Barkóczy</span>. Se eu nascesse de novo, ainda ia escolher ser filho dele."
+          "Metade de mim é manha, a outra metade é amor pelo meu <span className="text-primary">Papai Dashiell</span>."
         </p>
       </div>
     </div>
