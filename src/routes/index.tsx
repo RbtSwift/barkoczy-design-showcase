@@ -30,7 +30,7 @@ const dashiellText = [
 ];
 
 const tainaText = [
-  "Nascido em 4 de setembro, Tainã Barkóczy é a mente criativa e o coração digital por trás das inovações da Família Barkóczy. Filho biológico de Dashiell Barkóczy, o patriarca da família, e de uma ativista indígena Baré, ele carrega em suas raízes uma riqueza cultural que transparece em toda a sua arte. Sua chegada ao mundo foi marcada por amor e perda: o parto foi muito complicado, e era preciso decidir quem sobreviveria — ele ou a mãe. A decisão foi tomada com o coração partido e uma certeza: uma vida vivida se vai para que uma vida nova possa nascer. Desde aquele dia, Dashiell o levou para Madrid e o criou sozinho, dando-lhe todo o seu amor e o peso e o prestígio do sobrenome da família.",
+  "Nascido em 4 de setembro, Tainã Barkóczy é a mente criativa e o coração digital por trás das inovações da Família Barkóczy. Filho biológico de Dashiell Barkóczy, o patriarca da família, e de uma ativista indígena Baré, ele carrega em suas raízes uma riqueza cultural que transparece em toda a sua arte. Primogênito e filho único do patriarca, é o único herdeiro direto do nome e do império da família. Sua chegada ao mundo foi marcada por amor e perda: o parto foi muito complicado, e era preciso decidir quem sobreviveria — ele ou a mãe. A decisão foi tomada com o coração partido e uma certeza: uma vida vivida se vai para que uma vida nova possa nascer. Desde aquele dia, Dashiell o levou para Madrid e o criou sozinho, dando-lhe todo o seu amor e o peso e o prestígio do sobrenome da família.",
   "Essa intervenção de Dashiell moldou não apenas o futuro de Tainã, mas o seu próprio coração. Ele é profundamente apegado ao pai, a quem considera seu porto seguro e a pessoa que mais ama no mundo. Não há um único passo que Tainã dê, um projeto que conclua ou uma frustração que sinta que não seja imediatamente compartilhado com Dashiell. Seja dividindo a mesma sala ou conversando por mensagens enquanto viaja, Tainã faz questão de manter essa proximidade constante. Cada madrugada no Illustrator, cada nova habilidade que aprende e cada passo na Agência tem um objetivo silencioso e primordial em sua vida: ser o motivo do maior orgulho de seu pai.",
   "Apesar de já ter mais de 18 anos, perto do pai Tainã continua sendo criança. É como se a postura fosse embora: ele fica manhoso, carente, do jeito mais aberto que existe — e Dashiell sabe exatamente o que fazer com isso. Vive o enchendo de carinho, o mimando e realizando suas vontades sem pensar duas vezes, como quem entende que aquele menino ainda quer colo.",
   "O dia em que se assumiu gay ficou marcado para sempre. Mesmo sabendo que o pai o amava acima de tudo, Tainã sentiu medo — não de Dashiell, mas da sociedade preconceituosa em que vivia. A resposta veio em forma de acolhimento imediato e de um gesto que mudou o grupo: ao entender o peso que o filho carregava, Dashiell decidiu que o Grupo Barkóczy passaria a apoiar as causas LGBTQIA+, para que outras pessoas como Tainã nunca se sentissem sozinhas. Para Tainã, essa é a maior prova de amor que já recebeu.",
@@ -188,7 +188,7 @@ const accents: Record<Accent, { solid: string; text: string }> = {
 type Fact = { label: string; title: string; items?: string[]; tone: "accent" | "ink" | "light" };
 
 const dashiellFacts: Fact[] = [
-  { label: "Quem ele mais ama", title: "Tainã", items: ["Seu filho biológico", "Ao lado dele, é carinhoso, brincalhão e vulnerável"], tone: "accent" },
+  { label: "Quem ele mais ama", title: "Tainã", items: ["Seu filho biológico", "Primogênito e filho único", "Ao lado dele, é carinhoso, brincalhão e vulnerável"], tone: "accent" },
   { label: "Carinho", title: "Mimo sem limite", items: ["Enche o filho de carinho", "Realiza suas vontades sem pensar duas vezes", "Quanto mais mimo, mais manhoso — e ele adora"], tone: "accent" },
   { label: "Coração de pai", title: "Ainda uma criança", items: ["Vê Tainã como um menino que precisa ser protegido do mundo", "Um garoto que ele quer proteger pro resto da vida"], tone: "ink" },
 
@@ -208,6 +208,7 @@ const tainaFacts: Fact[] = [
   { label: "Quem ele mais ama", title: "Dashiell", items: ["Pai e porto seguro", "Compartilha tudo com ele", "Sonho: ser seu maior orgulho"], tone: "accent" },
   { label: "Perto do pai", title: "Criança de 18 anos", items: ["Perde a postura, fica manhoso e carente", "O pai sabe — e vive o mimando", "Suas vontades são feitas sem pensar duas vezes"], tone: "light" },
   { label: "Raízes", title: "Barkóczy & Baré", items: ["Filho biológico de Dashiell", "Mãe indígena Baré, que deu a vida por ele", "Nascido em 4 de setembro"], tone: "ink" },
+  { label: "Linhagem", title: "Primogênito Barkóczy", items: ["Filho único de Dashiell", "O único herdeiro direto do nome", "Primeiro a carregar o peso do sobrenome"], tone: "accent" },
   { label: "Estudos", title: "IED Madrid", items: ["Design Gráfico", "Comunicação Digital", "Design Têxtil"], tone: "light" },
   { label: "Trabalho", title: "Diretor de arte", items: ["Agência Barkóczy", "Sites e identidade visual", "Foto, ilustração, design têxtil"], tone: "light" },
   { label: "Cargo", title: "Sócio-herdeiro", items: ["Grupo Barkóczy · desde 2024", "Diretor de arte e criação", "Madrid, Espanha — trabalho atual"], tone: "accent" },
@@ -399,7 +400,7 @@ function Curriculo() {
       <div className="mt-4 rounded-[2rem] bg-muted p-8 md:p-10">
         <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">Sobre mim · nas palavras dele</p>
         <p className="mt-4 text-xl font-black leading-snug md:text-2xl">
-          "Herdei um sobrenome, um império e um nome que pesa mais que ouro, mas o meu maior patrimônio sempre vai ter nome e sobrenome: <span className="text-primary">Dashiell Barkóczy</span>. Eu trocaria todos os palácios do mundo por um fim de tarde no colo do meu pai. Se eu nascesse de novo, ainda ia escolher ser filho dele."
+          "O meu lugar seguro no mundo tem nome e sobrenome: <span className="text-primary">Dashiell Barkóczy</span>. Se eu nascesse de novo, ainda ia escolher ser filho dele."
         </p>
       </div>
     </div>
